@@ -1,14 +1,14 @@
 {
   "project": "uchronie-maybon",
   "updated": "2026-08-19",
-  "phase": "pause-humaine",
-  "notes": "Relecture humaine obligatoire avant T04",
+  "phase": "T05-in-progress",
+  "notes": "Architecture technique et SEO finalisés. Prêt pour le design.",
   "tasks": {
     "T00": "done",
     "T01": "done",
     "T02": "done",
     "T03": "done",
-    "T04": "pending",
+    "T04": "done",
     "T05": "pending",
     "T06": "pending",
     "T07": "pending",
@@ -18,6 +18,6 @@
     "T11": "pending",
     "T12": "pending"
   },
-  "current_task": "T04",
+  "current_task": "T05",
   "blocks": []
 }

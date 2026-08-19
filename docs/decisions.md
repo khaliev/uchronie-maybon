@@ -122,5 +122,37 @@ _(à remplir au fil des tâches)_
 - **Conséquences** : Les 32 originaux haute résolution (29 Mo) sont disponibles localement pour servir de base aux templates et aux futures optimisations d'assets.
 - **Statut** : actée
 
-cat >> docs/decisions.md << 'EOF'
+---
 
+### ADR-007 — Arborescence et stratégie SEO (T04)
+- **Date** : 2026-08-19
+- **Tâche** : T04
+- **Décision** : Validation de l'arborescence finale du site avec URLs propres, sans accents, en kebab-case. 
+  - La navigation se compose d'un menu principal avec les pages racines et d'un lien sortant vers la boutique SumUp existante.
+  - Le système de réservation (Google Calendar) disposera d'une page dédiée (`/rendez-vous/`) intégrée après une étape de consentement explicite, avec un fallback si désactivé.
+  - Le plan de redirection 301 gère les URLs Wix d'origine vers les nouvelles (avec prise en charge de l'encodage spécifique pour l'ancienne page `ebénisterie`).
+- **Contexte** : Nécessité de garantir une migration SEO sans perte de jus tout en adoptant une structure plus professionnelle et évolutive que l'existant.
+- **Alternatives rejetées** :
+  - Intégration iframe de la boutique SumUp : rejeté car techniquement complexe à bien adapter sur mobile et bloqué par les politiques de contenu (CSP) fréquentes ; on privilégie un lien sortant clair dans le menu.
+- **Conséquences** : Les pages Markdown doivent être rigoureusement créées avec les slugs définis dans l'architecture, et le header/footer construits autour de cette arborescence.
+- **Statut** : actée
+
+{
+  "_meta": {
+    "source": "https://melodiemaybon.wixsite.com/uchronie-maybon",
+    "verified": false
+  },
+  "items": [
+    { "label": "Accueil", "href": "/", "order": 0 },
+    { "label": "À propos", "href": "/a-propos/", "order": 1 },
+    { "label": "Savoir-faire", "href": "/savoir-faire/", "order": 2, "children": [
+      { "label": "Ébénisterie", "href": "/ebenisterie/" },
+      { "label": "Tabletterie", "href": "/tabletterie/" },
+      { "label": "Marqueterie & gainerie", "href": "/marqueterie-gainerie/" }
+    ]},
+    { "label": "Réalisations", "href": "/realisations/", "order": 3 },
+    { "label": "Professionnels", "href": "/professionnels/", "order": 4 },
+    { "label": "Contact", "href": "/contact/", "order": 5 },
+    { "label": "Rendez-vous", "href": "/rendez-vous/", "order": 6 }
+  ]
+}
