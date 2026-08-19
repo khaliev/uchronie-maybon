@@ -154,3 +154,46 @@ _(à remplir au fil des tâches)_
 - **Statut** : actée
 
 **Mise à jour 2026-08-19 :** Polices auto-hébergées en WOFF2 (8 fichiers, ~180 Ko total) pour éliminer la dépendance Bunny Fonts et optimiser le temps de chargement initial (économie estimée : 300-500ms au LCP).
+
+---
+
+### ADR-009 — Moteur de build complet et gabarits alignés sur le design system (T06)
+- **Date** : 2026-08-19
+- **Tâche** : T06
+- **Décision** :
+  - `scripts/build.mjs` est le moteur réel : lecture de `site.json` + `navigation.json`, parsing du frontmatter YAML (title, description, slug) de tous les `pages/*.md`, conversion Markdown→HTML maison (`#`, `##`, listes `-`/`1.`, `**gras**`, `*italique*`, `\`code\``, `[lien](url)`, `>citation`), injection des partials `head`/`header`/`footer`, résolution des variables `{{...}}`, sortie `dist/[slug]/index.html` (+ `dist/index.html` pour l'accueil), copie de `src/assets/` → `dist/assets/`, génération de `sitemap.xml` et `robots.txt`.
+  - Les gabarits `head.html`, `header.html`, `footer.html` utilisent **les classes du design system T05** (`brand`, `header-inner`, `nav-desktop`, `nav-list`, `nav-link`, `nav-toggle`, `nav-mobile-drawer`, `site-footer`, `footer-grid`, `footer-bottom`…) plutôt que des classes génériques, afin que le rendu soit réellement stylé.
+  - La navigation est **injectée par le build** depuis `navigation.json` (desktop + tiroir mobile), avec `aria-current="page"` sur la page courante et lien « Boutique ↗ » en `target="_blank"` vers `site.links.boutique`. Les enfants de « Savoir-faire » sont aplatIs dans les listes (le menu déroulant sera affiné en T08).
+  - Les placeholders `[[A_VERIFIER:...]]` présents dans un corps Markdown sont rendus **visibles** en `<mark class="a-verifier">` pour la QA (exigence T07).
+- **Contexte** : remplacer le squelette non fonctionnel par un build qui génère un site complet et navigable.
+- **Alternatives rejetées** : gabarits avec classes non stylées (rendu brut), navigation en dur dans le partial (contredit la centralisation du contenu), dépendance à une librairie Markdown (zéro dépendance imposée).
+- **Conséquences** :
+  - T07 : pages composées à partir de ce pipeline ; T08 : dropdown du menu « Savoir-faire », lightbox galerie ; T09 : réservation via `booking-consent.html` + Google Agenda.
+  - `site.links.boutique` ajouté dans `site.json` avec `verified: false` (boutique SumUp active constatée, URL à confirmer).
+  - Deux pages légales minimales créées (`mentions-legales`, `politique-de-confidentialite`) avec placeholders `[[A_VERIFIER:...]]` ; les contenus définitifs restent à valider par la cliente.
+- **Statut** : actée
+---
+
+### ADR-010 — Corrections urgentes rendu T06/T07 (images, navigation, footer)
+- **Date** : 2026-08-20
+- **Tâche** : T06 / T07
+- **Constat** (rendu réel) : aucune image visible hors logo, liens de navigation cassés (« À » puis « propos »), footer perçu comme démesuré et dupliqué.
+- **Décision** :
+  - **Chemins d'images** : `scripts/build.mjs` convertit désormais toute syntaxe Markdown `![alt](chemin)` (en ligne ou sur ligne propre) en `<img src="/assets/images/originals/<nom-fichier>" alt="..." loading="lazy">`, avec normalisation de n'importe quel chemin relatif (`../assets/images/...`, `assets/images/...`, simple nom de fichier). Aucune référence `../` ne subsiste dans le HTML final de `dist/`.
+  - **Navigation** : dans `src/assets/css/components.css`, `.nav-list` passe en `display: flex` avec `flex-wrap: wrap`, `.nav-list li` sans largeur fixe (`flex: 0 0 auto`), `.nav-link` en `inline-flex` avec `white-space: nowrap` (plus de coupure « À / propos ») ; sur mobile, `.nav-list` passe en `flex-direction: column` (le tiroir mobile `.nav-mobile-list` est déjà en colonne).
+  - **Footer** : vérifié — `src/partials/footer.html` contient un unique `<footer>`, `build.mjs` l'injecte une seule fois par page, et `.site-footer` reste en position normale (aucun `sticky`/`fixed`).
+- **Conséquences** : les pages de T07 peuvent désormais référencer des images via Markdown sans chemin cassé ; le rendu de la navigation est stable desktop/mobile.
+- **Statut** : actée
+
+### ADR-011 — Contenu complet des pages T07 + SEO head (OG / JSON-LD)
+- **Date** : 2026-08-20
+- **Tâche** : T07
+- **Décision** :
+  - `src/content/pages/accueil.md` est réécrit avec le contenu complet attendu (hero « Le geste ancien, le dessin contemporain », savoir-faire Ébénisterie/Tabletterie/Marqueterie & Gainerie, réalisations, atelier et horaires), slug `index` désormais reconnu par le build comme page d'accueil (`dist/index.html`, `aria-current`, sitemap).
+  - `scripts/build.mjs` convertit toute image Markdown `![alt](chemin)` (ligne seule ou inline) en `<img src="/assets/images/originals/<fichier>" alt="..." loading="lazy" width="800" height="600">`, en ne s'appuyant que sur les fichiers réellement présents dans `src/assets/images/originals/` ; aucune référence `../` ne survit dans `dist/`. Les blocs du contenu sont séparés par une ligne vide pour un HTML généré lisible.
+  - `src/partials/head.html` est enrichi de métadonnées SEO non hallucinées (canonical, Open Graph, Twitter card, favicon, JSON-LD `HomeGoodsStore`) alimentées par les données vérifiées de `site.json` ; l'URL de domaine reste provisoire (`verified: false`).
+  - Navigation : `.site-header .container` en flex, `.nav-list` en `display:flex; gap:1.5rem` sans retour à la ligne (chaque lien `white-space:nowrap`), masquage desktop sous 768px (menu hamburger).
+- **Contexte** : le rendu réel de l'accueil était incomplet (2 paragraphes), sans image intégrée, avec une navigation qui se cassait et un footer démesuré faute de contenu.
+- **Alternatives rejetées** : gonfler artificiellement la page par du contenu non sourcé (interdit), ajouter des sélecteurs `.main-nav` sans correspondance dans le HTML (CSS mort), enjoliveur HTML externe (dépendance).
+- **Conséquences** : dist/index.html = 201 lignes, 4 `<img>` ; T08 (menu déroulant, lightbox) et T10 (SEO avancé : JSON-LD plus riche, redirections) s'appuient sur ce socle ; le domaine `uchronie-maybon.fr` et la boutique SumUp restent à confirmer côté client.
+- **Statut** : actée

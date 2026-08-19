@@ -20,6 +20,11 @@
 ### src/content/site.json
 - [ ] `[[A_VERIFIER:domaine final]]` — links.official_site : domaine officiel
 - [ ] `[[A_VERIFIER:url de réservation]]` — links.booking : url de réservation
+- [ ] `links.boutique` — URL de la boutique SumUp (active constatée en T01, à confirmer)
+
+### Pages légales (créées en T06, contenus à valider)
+- [ ] `src/content/pages/mentions-legales.md` — données d'identification légales (SIRET, SIREN, forme juridique), hébergeur, propriété intellectuelle
+- [ ] `src/content/pages/politique-de-confidentialite.md` — politique, cookies, droits RGPD
 
 ## Validé par le client
 - _(à remplir)_

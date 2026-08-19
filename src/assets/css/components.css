@@ -135,6 +135,13 @@
   transition: background-color var(--transition-base), box-shadow var(--transition-base);
 }
 
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
 .header-inner {
   display: flex;
   align-items: center;
@@ -199,21 +206,27 @@
 .nav-list {
   display: flex;
   align-items: center;
+  gap: var(--space-md);
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: var(--space-xs);
+}
+
+.nav-list li {
+  margin: 0;
+  flex: 0 0 auto;
 }
 
 .nav-link {
   display: inline-flex;
   align-items: center;
+  white-space: nowrap;
   min-height: var(--target-min-size);
-  padding: var(--space-2xs) var(--space-xs);
+  padding: 0.5rem 0.75rem;
   font-family: var(--font-sans);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-medium);
-  color: var(--color-noyer-dark);
+  color: var(--color-noyer);
   text-decoration: none;
   border-radius: var(--radius-sm);
   transition: color var(--transition-fast), background-color var(--transition-fast);
@@ -236,6 +249,21 @@
   display: inline-flex;
   align-items: center;
   gap: var(--space-3xs);
+}
+
+/* Navigation mobile : empilement vertical des liens */
+@media (max-width: 63.999rem) {
+  .nav-list {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Masquage de la navigation desktop sous 768px (menu hamburger) */
+@media (max-width: 48rem) {
+  .nav-desktop {
+    display: none;
+  }
 }
 
 /* Bouton Menu Mobile (Hamburger accessible) */
@@ -304,6 +332,10 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-xs);
+}
+
+.nav-mobile-list li {
+  margin: 0;
 }
 
 .nav-mobile-link {

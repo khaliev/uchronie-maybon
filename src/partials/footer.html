@@ -1,8 +1,43 @@
 <footer class="site-footer">
-  <!-- TODO T06 : coordonnées injectées depuis site.json (vérifiées en T03) -->
-  <p class="footer-brand">Uchronie Maybon</p>
-  <nav aria-label="Navigation de pied de page">
-    <!-- liens injectés par le build -->
-  </nav>
-  <p class="footer-legal">[[A_VERIFIER:mentions légales et crédits]]</p>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h2 class="footer-col-title">{{site.name}}</h2>
+        <p class="footer-contact-item">{{site.tagline}}</p>
+        <p class="footer-contact-item">{{site.address}}</p>
+        <ul class="footer-social-list">
+          <li><a class="footer-social-link" href="{{site.instagram}}" target="_blank" rel="noopener" aria-label="Instagram (nouvelle fenêtre)">IG</a></li>
+          <li><a class="footer-social-link" href="{{site.facebook}}" target="_blank" rel="noopener" aria-label="Facebook (nouvelle fenêtre)">FB</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h2 class="footer-col-title">Contact</h2>
+        <p class="footer-contact-item"><a class="footer-link" href="tel:{{site.phone_tel}}">{{site.phone}}</a></p>
+        <p class="footer-contact-item"><a class="footer-link" href="mailto:{{site.email}}">{{site.email}}</a></p>
+        <p class="footer-contact-item">{{site.hours}}</p>
+      </div>
+      <div class="footer-col">
+        <h2 class="footer-col-title">Navigation</h2>
+        <ul class="footer-links">
+          <li><a class="footer-link" href="/a-propos/">À propos</a></li>
+          <li><a class="footer-link" href="/savoir-faire/">Savoir-faire</a></li>
+          <li><a class="footer-link" href="/realisations/">Réalisations</a></li>
+          <li><a class="footer-link" href="/rendez-vous/">Rendez-vous</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h2 class="footer-col-title">Légal</h2>
+        <ul class="footer-links">
+          <li><a class="footer-link" href="/mentions-legales/">Mentions légales</a></li>
+          <li><a class="footer-link" href="/politique-de-confidentialite/">Politique de confidentialité</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="year">2026</span> {{site.name}}</p>
+      <p>{{site.tagline}}</p>
+    </div>
+  </div>
 </footer>
+</body>
+</html>

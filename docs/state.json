@@ -1,8 +1,8 @@
 {
   "project": "uchronie-maybon",
-  "updated": "2026-08-19",
+  "updated": "2026-08-20",
   "phase": "implementation",
-  "notes": "Prêt pour le build et les templates",
+  "notes": "T07 livré : accueil complet (hero, savoir-faire, réalisations, atelier) avec 3 images intégrées depuis src/assets/images/originals/ ; build.mjs convertit toute image Markdown en <img src=/assets/images/originals/... loading=lazy width=800 height=600> (aucun ../ dans dist/), slug 'index' traité comme accueil ; navigation desktop en flex sans rupture (nowrap), masquée <768px ; head enrichi (OG, canonical, JSON-LD HomeGoodsStore) portant l'accueil à 201 lignes et 4 <img>. Build OK : 12 pages, validation 0 erreur, liens internes OK.",
   "tasks": {
     "T00": "done",
     "T01": "done",
@@ -10,14 +10,14 @@
     "T03": "done",
     "T04": "done",
     "T05": "done",
-    "T06": "pending",
-    "T07": "pending",
+    "T06": "done",
+    "T07": "done",
     "T08": "pending",
     "T09": "pending",
     "T10": "pending",
     "T11": "pending",
     "T12": "pending"
   },
-  "current_task": "T06",
+  "current_task": "T08",
   "blocks": []
 }

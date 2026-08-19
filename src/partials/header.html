@@ -1,12 +1,21 @@
 <header class="site-header">
   <a class="skip-link" href="#main">Aller au contenu principal</a>
-  <!-- TODO T06/T08 : injection de la navigation depuis navigation.json -->
-  <nav class="site-nav" aria-label="Navigation principale">
-    <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Ouvrir le menu">
-      Menu
-    </button>
-    <ul id="nav-menu" class="nav-menu">
-      <!-- items injectés par le build (navigation.json) -->
-    </ul>
-  </nav>
+  <div class="container">
+    <div class="header-inner">
+      <a class="brand" href="/" aria-label="{{site.name}} — accueil">
+        <img class="brand-logo" src="/assets/images/originals/logo-uchronie-maybon-complet.png" alt="Logo {{site.name}}" width="80" height="80">
+        <span class="brand-text">
+          <span class="brand-title">{{site.name}}</span>
+          <span class="brand-tagline">{{site.tagline}}</span>
+        </span>
+      </a>
+      {{nav-desktop}}
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Ouvrir le menu">
+        <span class="nav-toggle-line"></span>
+        <span class="nav-toggle-line"></span>
+        <span class="nav-toggle-line"></span>
+      </button>
+      {{nav-mobile}}
+    </div>
+  </div>
 </header>

@@ -31,6 +31,12 @@
     "source": "sera configuré si acceptation du projet", 
     "verified": false,
     "note": "Google Calendar à configurer par la cliente"
+  },
+  "boutique": { 
+    "value": "https://uchronie-maybon.sumupstore.com/", 
+    "source": "https://uchronie-maybon.sumupstore.com/", 
+    "verified": false,
+    "note": "Boutique SumUp active constatée en T01 ; URL officielle à confirmer (cf. TODO-CLIENT)"
   }
 }
 }
