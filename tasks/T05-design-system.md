@@ -2,6 +2,7 @@
 
 ## Objectif
 Créer l'interface visuelle "Moderne & Classique" sans aucun framework (Pur CSS).
+Pour les polices, on va utiliser bunnyfonts https://bunnyfonts.com/ qui propose de belles polices gratuites.
 
 ## Contraintes
 - Palette : Bordeaux (#681D2A), Champagne (#C5A46D), Ivoire, Noyer.
