@@ -1,12 +1,12 @@
 {
   "project": "uchronie-maybon",
   "updated": "2026-08-19",
-  "phase": "T02-in-progress",
-  "notes": "T01 terminé : audit des 6 sources + pages internes. 6 pages Wix OK, uchronie-maybon.com NXDOMAIN, boutique SumUp OK (anti-bot). Contradictions reportées dans TODO-CLIENT.md (En attente) et ADR-005.",
+  "phase": "T03-in-progress",
+  "notes": "T02 terminé : inventaire de 34 assets (32 téléchargés en haute résolution dans src/assets/images/originals/ - 29 Mo, 1 erreur 403 Wix, SumUp protégé par Cloudflare). CSV inventaire-assets.csv généré, ADR-006 actée.",
   "tasks": {
     "T00": "done",
     "T01": "done",
-    "T02": "pending",
+    "T02": "done",
     "T03": "pending",
     "T04": "pending",
     "T05": "pending",
@@ -18,6 +18,6 @@
     "T11": "pending",
     "T12": "pending"
   },
-  "current_task": "T02",
+  "current_task": "T03",
   "blocks": []
 }

@@ -96,3 +96,17 @@ _(à remplir au fil des tâches)_
   (`services`, `projects`, `testimonials`) passeront à un `source`/`verified`
   par entrée ; le `_meta` de fichier reste la source par défaut.
 - **Statut** : actée
+
+---
+
+### ADR-006 — Récupération et inventaire des assets visuels (T02)
+- **Date** : 2026-08-19
+- **Tâche** : T02
+- **Décision** : Récupération en pleine résolution des 32 images et logos publics du site Wix existant dans `src/assets/images/originals/`, renommage en kebab-case français descriptif et factuel, et catalogage complet dans `docs/inventaire-assets.csv`. Les conversions en formats modernes (WebP/AVIF) et responsive sont différées au pipeline de build statique ultérieur en raison de l'absence d'outils CLI de conversion (cwebp, avifenc, imagemagick) dans l'environnement d'exécution.
+- **Contexte** : 32 fichiers sur 33 identifiés ont été téléchargés avec succès (1 fichier Wix en erreur HTTP 403 et la boutique SumUp protégée par Cloudflare anti-bot). Aucune essence de bois, matière ou collection non formellement sourcée n'a été inventée pour les noms de fichiers et descriptions.
+- **Alternatives rejetées** :
+  - Conserver les identifiants opaques Wix (`6860cd_...`) : rejeté car non maintenable et anti-SEO.
+  - Inventer des essences de bois dans les noms de fichiers : rejeté en vertu des règles anti-hallucination.
+  - Générer des images de substitution par IA pour les assets inaccessibles : strictement interdit.
+- **Conséquences** : Les 32 originaux haute résolution (29 Mo) sont disponibles localement pour servir de base aux templates et aux futures optimisations d'assets.
+- **Statut** : actée
