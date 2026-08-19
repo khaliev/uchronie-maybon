@@ -19,8 +19,18 @@
     "instagram": { "value": "https://www.instagram.com/uchroniemaybon/", "source": "https://melodiemaybon.wixsite.com/uchronie-maybon", "verified": true },
     "facebook": { "value": "https://www.facebook.com/uchroniemaybon", "source": "https://melodiemaybon.wixsite.com/uchronie-maybon", "verified": true }
   },
-  "links": {
-    "official_site": { "value": "[[A_VERIFIER:domaine final]]", "source": "docs/audit-site-existant.md", "verified": false },
-    "booking": { "value": "[[A_VERIFIER:url de réservation]]", "source": "docs/brief-client.md", "verified": false }
+"links": {
+  "official_site": { 
+    "value": "https://www.uchronie-maybon.fr", 
+    "source": "décision provisoire pour la démo", 
+    "verified": false,
+    "note": "À confirmer avec la cliente — uchronie-maybon.com est NXDOMAIN"
+  },
+  "booking": { 
+    "value": "BOOKING_URL_PLACEHOLDER", 
+    "source": "sera configuré si acceptation du projet", 
+    "verified": false,
+    "note": "Google Calendar à configurer par la cliente"
   }
+}
 }

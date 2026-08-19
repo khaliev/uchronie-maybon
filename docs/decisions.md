@@ -99,6 +99,17 @@ _(à remplir au fil des tâches)_
 
 ---
 
+### ADR-005 — Portrait non utilisé dans la démo
+- **Date** : 2026-08-19
+- **Décision** : Le portrait de Mélodie ne sera pas utilisé dans la maquette
+  de prospection pour respecter le droit à l'image.
+- **Conséquences** : La page À propos utilisera uniquement des photos
+  d'atelier et de créations. Si le projet est accepté, on demandera
+  l'autorisation pour un portrait officiel.
+- **Statut** : actée
+
+---
+
 ### ADR-006 — Récupération et inventaire des assets visuels (T02)
 - **Date** : 2026-08-19
 - **Tâche** : T02
@@ -110,3 +121,6 @@ _(à remplir au fil des tâches)_
   - Générer des images de substitution par IA pour les assets inaccessibles : strictement interdit.
 - **Conséquences** : Les 32 originaux haute résolution (29 Mo) sont disponibles localement pour servir de base aux templates et aux futures optimisations d'assets.
 - **Statut** : actée
+
+cat >> docs/decisions.md << 'EOF'
+
