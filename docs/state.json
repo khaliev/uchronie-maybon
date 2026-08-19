@@ -1,11 +1,11 @@
 {
   "project": "uchronie-maybon",
   "updated": "2026-08-19",
-  "phase": "T00-in-progress",
-  "notes": "Démarrage du protocole anti-hallucination.",
+  "phase": "T02-in-progress",
+  "notes": "T01 terminé : audit des 6 sources + pages internes. 6 pages Wix OK, uchronie-maybon.com NXDOMAIN, boutique SumUp OK (anti-bot). Contradictions reportées dans TODO-CLIENT.md (En attente) et ADR-005.",
   "tasks": {
-    "T00": "in_progress",
-    "T01": "pending",
+    "T00": "done",
+    "T01": "done",
     "T02": "pending",
     "T03": "pending",
     "T04": "pending",
@@ -18,6 +18,6 @@
     "T11": "pending",
     "T12": "pending"
   },
-  "current_task": "T00",
+  "current_task": "T02",
   "blocks": []
 }

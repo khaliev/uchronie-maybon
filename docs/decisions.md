@@ -58,3 +58,41 @@ _(à remplir au fil des tâches)_
   un formulaire maison (charge de maintenance).
 - **Conséquences** : le planning est visible uniquement via Google.
 - **Statut** : actée
+
+### ADR-005 — Contradictions relevées en T01, aucune non tranchée
+- **Date** : 2026-08-19
+- **Tâche** : T01
+- **Décision** : les contradictions trouvées pendant l'audit sont consignées dans
+  `docs/TODO-CLIENT.md` (section « En attente ») sans être tranchées.
+- **Contexte** : l'audit a révélé plusieurs sources contradictoires : adresse
+  (68 bis rue Ponsardin, 51100 REIMS vs 51420 Nogent-l'Abbesse), domaine
+  www.uchronie-maybon.com (NXDOMAIN), boutique melodie-maybon.sumup.link
+  (inactive) vs uchronie-maybon.sumupstore.com (active), casse des URLs
+  Instagram/Facebook, lien MELI-MELO en 404. Conformément aux règles
+  anti-hallucination, aucune version n'est retenue avant confirmation client.
+- **Alternatives rejetées** : trancher arbitrairement (interdit), corriger les
+  textes (hors périmètre T01).
+- **Conséquences** : en T03, toute donnée concernée portera `verified: false`
+  et un `[[A_VERIFIER:...]]` ; rien n'est rempli sans source confirmée.
+- **Statut** : actée
+
+### ADR-004 — Format du schéma `source`/`verified` dans les JSON de contenu
+- **Date** : 2026-08-19
+- **Tâche** : T00
+- **Décision** : chaque fichier JSON de `src/content/` (hors `pages/`) porte un
+  bloc racine `_meta` obligatoire au format
+  `{ "source": "<url-source>", "verified": <booléen> }`. Le script
+  `validate-content.mjs` échoue si `_meta` est absent, si `source` est vide ou
+  si `verified` n'est pas un booléen. Tout placeholder `[[A_VERIFIER:...]]`
+  présent dans un JSON doit avoir une entrée exacte dans `docs/TODO-CLIENT.md`,
+  sinon le script échoue.
+- **Contexte** : concrétiser l'ADR-002 de façon mécanique dès le scaffolding,
+  sans inventer de donnée. À ce stade aucun contenu n'est collecté :
+  `verified: false` partout, placeholders conservés.
+- **Alternatives rejetées** : wrapper objet par donnée
+  (`{ value, source, verified }`) — casse les lectures plates
+  (`site.name`, `site.lang`) du build et alourdit les fichiers.
+- **Conséquences** : en T03, lors de l'extraction, les listes
+  (`services`, `projects`, `testimonials`) passeront à un `source`/`verified`
+  par entrée ; le `_meta` de fichier reste la source par défaut.
+- **Statut** : actée

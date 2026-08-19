@@ -1,4 +1,8 @@
 {
+  "_meta": {
+    "source": "https://melodiemaybon.wixsite.com/uchronie-maybon",
+    "verified": false
+  },
   "items": [
     { "label": "Accueil", "href": "/", "order": 0 },
     { "label": "À propos", "href": "/a-propos/", "order": 1 },
