@@ -1,13 +1,13 @@
 {
   "project": "uchronie-maybon",
   "updated": "2026-08-19",
-  "phase": "T03-in-progress",
-  "notes": "T02 terminé : inventaire de 34 assets (32 téléchargés en haute résolution dans src/assets/images/originals/ - 29 Mo, 1 erreur 403 Wix, SumUp protégé par Cloudflare). CSV inventaire-assets.csv généré, ADR-006 actée.",
+  "phase": "pause-humaine",
+  "notes": "Relecture humaine obligatoire avant T04",
   "tasks": {
     "T00": "done",
     "T01": "done",
     "T02": "done",
-    "T03": "pending",
+    "T03": "done",
     "T04": "pending",
     "T05": "pending",
     "T06": "pending",
@@ -18,6 +18,6 @@
     "T11": "pending",
     "T12": "pending"
   },
-  "current_task": "T03",
+  "current_task": "T04",
   "blocks": []
 }

@@ -1,14 +1,13 @@
 ---
 slug: marqueterie-gainerie
 title: Marqueterie & gainerie
-description: [[A_VERIFIER:méta description marqueterie gainerie]]
+description: Découvrez les savoir-faire de la marqueterie et de la gainerie, un travail minutieux du bois, du cuir et des matières.
 ---
 
 # Marqueterie & gainerie
 
-[[À_COMPLÉTER — contenu détaillé des activités marqueterie et gainerie]]
+Je mêle les matières avec précision pour singulariser chacune de mes créations. 
 
-- [[A_VERIFIER:description marqueterie]]
-- [[A_VERIFIER:description gainerie]]
-- [[A_VERIFIER:typologies de réalisations]]
-- [[A_VERIFIER:projets associés (projects.json)]]
+La marqueterie consiste à former des dessins grâce à un assemblage méticuleux de matériaux variés tels que le bois, le cuir ou la paille. J'y recherche la modernité tout en conservant les grands classiques de l'ébénisterie, comme l'incontournable motif de damier.
+
+La gainerie est le travail du cuir et du cuir synthétique pour l'habillage d'objets, offrant des finitions élégantes et durables.

@@ -1,13 +1,9 @@
 ---
 slug: realisations
 title: Réalisations
-description: [[A_VERIFIER:méta description réalisations]]
+description: Galerie des réalisations d'Uchronie Maybon, pièces uniques en bois et cuir pour hommes et femmes.
 ---
 
 # Réalisations
 
-[[À_COMPLÉTER — galerie des réalisations, alimentée par projects.json]]
-
-- [[A_VERIFIER:liste des projets]]
-- [[A_VERIFIER:visuels et droits d'usage]]
-- [[A_VERIFIER:organisation de la galerie]]
+Découvrez quelques-unes de mes créations, des modèles uniques et de caractère, conçus et fabriqués à Reims, en France. Qu'il s'agisse de pièces en bois ou en cuir synthétique, chaque objet est imaginé pour vous.

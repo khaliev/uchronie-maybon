@@ -1,8 +1,104 @@
 {
   "_meta": {
-    "source": "https://melodiemaybon.wixsite.com/uchronie-maybon",
-    "verified": false
+    "source": "docs/inventaire-assets.csv",
+    "verified": true
   },
-  "intro": "[[A_VERIFIER:introduction des réalisations]]",
-  "projects": []
+  "projects": [
+    {
+      "slug": "coffrets-cubes-colores",
+      "title": { "value": "Coffrets cubes colorés", "source": "docs/inventaire-assets.csv", "verified": true },
+      "description": { "value": "Ensemble de dix boîtes et coffrets cubiques colorés vus en plongée sur fond blanc avec boutons dorés.", "source": "docs/inventaire-assets.csv", "verified": true },
+      "image": { "value": "coffrets-cubes-colores-vue-plongee.png", "source": "docs/inventaire-assets.csv", "verified": true }
+    },
+    {
+      "slug": "panneau-marqueterie-geometrique",
+      "title": { "value": "Panneau de marqueterie", "source": "docs/inventaire-assets.csv", "verified": true },
+      "description": { "value": "Gros plan sur panneau de marqueterie géométrique en triangles de bois clair et teinté.", "source": "docs/inventaire-assets.csv", "verified": true },
+      "image": { "value": "detail-marqueterie-geometrique-bois.jpg", "source": "docs/inventaire-assets.csv", "verified": true }
+    },
+    {
+      "slug": "presentoir-gradins-osb",
+      "title": { "value": "Présentoir en gradins", "source": "docs/inventaire-assets.csv", "verified": true },
+      "description": { "value": "Présentoir d'exposition à deux gradins en panneaux OSB et plateaux noirs posé sur établi.", "source": "docs/inventaire-assets.csv", "verified": true },
+      "image": { "value": "presentoir-gradins-osb-atelier.jpg", "source": "docs/inventaire-assets.csv", "verified": true }
+    },
+    {
+      "slug": "presentoir-arche",
+      "title": { "value": "Présentoir en arche", "source": "docs/inventaire-assets.csv", "verified": true },
+      "description": { "value": "Présentoir vertical en bois résineux clair avec dossier en arche et 3 étagères décalées sur fond noir.", "source": "docs/inventaire-assets.csv", "verified": true },
+      "image": { "value": "presentoir-arche-trois-etageres.jpg", "source": "docs/inventaire-assets.csv", "verified": true }
+    },
+    {
+      "slug": "table-ronde-marqueterie",
+      "title": { "value": "Table ronde", "source": "docs/inventaire-assets.csv", "verified": true },
+      "description": { "value": "Plateau de table ronde en bois avec placage en rayons et médaillon floral en marqueterie.", "source": "docs/inventaire-assets.csv", "verified": true },
+      "image": { "value": "table-ronde-marqueterie-florale.jpg", "source": "docs/inventaire-assets.csv", "verified": true }
+    },
+    {
+      "slug": "table-volante-loupe",
+      "title": { "value": "Table volante", "source": "docs/inventaire-assets.csv", "verified": true },
+      "description": { "value": "Table volante classique en bois verni avec tiroir en loupe, garnitures dorées et entretoise cintrée.", "source": "docs/inventaire-assets.csv", "verified": true },
+      "image": { "value": "table-volante-classique-loupe-bronzes.jpg", "source": "docs/inventaire-assets.csv", "verified": true }
+    },
+    {
+      "slug": "sellette-bleu-et-or",
+      "title": { "value": "Sellette bleue et or", "source": "docs/inventaire-assets.csv", "verified": true },
+      "description": { "value": "Sellette haute rectangulaire gainée de bleu mat avec bordures dorées sur parquet.", "source": "docs/inventaire-assets.csv", "verified": true },
+      "image": { "value": "sellette-colonne-bleu-et-or.jpg", "source": "docs/inventaire-assets.csv", "verified": true }
+    },
+    {
+      "slug": "collection-arlequin",
+      "title": { "value": "Collection Arlequin", "source": "docs/inventaire-assets.csv", "verified": true },
+      "description": { "value": "Ensemble de coffrets, étuis et sacoche rigide à motifs géométriques multicolores type Mondrian.", "source": "docs/inventaire-assets.csv", "verified": true },
+      "image": { "value": "collection-arlequin-multicolore.jpg", "source": "docs/inventaire-assets.csv", "verified": true }
+    },
+    {
+      "slug": "collection-sablier",
+      "title": { "value": "Collection Sablier", "source": "docs/inventaire-assets.csv", "verified": true },
+      "description": { "value": "Composition de divers coffrets en bois et matières gainées colorées, coffret ouvert avec doublure motifs dragons.", "source": "docs/inventaire-assets.csv", "verified": true },
+      "image": { "value": "collection-coffrets-bois-et-gainerie.png", "source": "docs/inventaire-assets.csv", "verified": true }
+    },
+    {
+      "slug": "coffret-tiroir-marqueterie",
+      "title": { "value": "Coffret à tiroir", "source": "docs/inventaire-assets.csv", "verified": true },
+      "description": { "value": "Grand coffret rectangulaire à tiroir inférieur habillé de marqueterie géométrique en rectangles de bois variés.", "source": "docs/inventaire-assets.csv", "verified": true },
+      "image": { "value": "coffret-tiroir-marqueterie-geometrique.jpg", "source": "docs/inventaire-assets.csv", "verified": true }
+    },
+    {
+      "slug": "dessous-de-verre-rosaces",
+      "title": { "value": "Dessous de verre", "source": "docs/inventaire-assets.csv", "verified": true },
+      "description": { "value": "Ensemble de dessous de verre circulaires en bois clair gravés au laser de motifs de rosace et quadrillages.", "source": "docs/inventaire-assets.csv", "verified": true },
+      "image": { "value": "dessous-de-verre-bois-gravure-rosaces.jpg", "source": "docs/inventaire-assets.csv", "verified": true }
+    },
+    {
+      "slug": "boite-cubique-zebre",
+      "title": { "value": "Boîte cubique", "source": "docs/inventaire-assets.csv", "verified": true },
+      "description": { "value": "Petite boîte cubique à étages en bois zébré clair et bandes noires avec bouton métallique sommital.", "source": "docs/inventaire-assets.csv", "verified": true },
+      "image": { "value": "boite-cubique-bois-zebre.jpg", "source": "docs/inventaire-assets.csv", "verified": true }
+    },
+    {
+      "slug": "coffret-bijoux-gainerie",
+      "title": { "value": "Coffret à bijoux", "source": "docs/inventaire-assets.csv", "verified": true },
+      "description": { "value": "Coffret à bijoux ouvert en bois avec intérieur gainé de noir, tiroir et deux plumiers amovibles.", "source": "docs/inventaire-assets.csv", "verified": true },
+      "image": { "value": "coffret-bijoux-ouvert-gainerie-noire.jpg", "source": "docs/inventaire-assets.csv", "verified": true }
+    },
+    {
+      "slug": "coffret-couteaux-blason",
+      "title": { "value": "Coffret à couteaux", "source": "docs/inventaire-assets.csv", "verified": true },
+      "description": { "value": "Coffret à 6 couteaux en bois ouvert avec garniture bleu marine et blason doré Meyer 1241 sous le couvercle.", "source": "docs/inventaire-assets.csv", "verified": true },
+      "image": { "value": "coffret-couteaux-bois-et-cuir-blason.jpg", "source": "docs/inventaire-assets.csv", "verified": true }
+    },
+    {
+      "slug": "protege-carnets",
+      "title": { "value": "Protège-carnets", "source": "docs/inventaire-assets.csv", "verified": true },
+      "description": { "value": "Deux protège-carnets : l'un en tissu motif feuillage, l'autre en cuir noir avec médaillon marqueté et coins dorés.", "source": "docs/inventaire-assets.csv", "verified": true },
+      "image": { "value": "protege-carnets-cuir-et-marqueterie.jpg", "source": "docs/inventaire-assets.csv", "verified": true }
+    },
+    {
+      "slug": "dessous-de-verre-cuir",
+      "title": { "value": "Dessous de verre carrés", "source": "docs/inventaire-assets.csv", "verified": true },
+      "description": { "value": "Dessous de verre carrés gainés de cuir noir et bordeaux avec liseré doré sur souche de bois en extérieur.", "source": "docs/inventaire-assets.csv", "verified": true },
+      "image": { "value": "dessous-de-verre-cuir-noir-bordeaux.jpg", "source": "docs/inventaire-assets.csv", "verified": true }
+    }
+  ]
 }

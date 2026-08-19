@@ -1,26 +1,26 @@
 {
   "_meta": {
-    "source": "https://melodiemaybon.wixsite.com/uchronie-maybon/contact",
-    "verified": false
+    "source": "docs/inventaire-contenu.csv",
+    "verified": true
   },
-  "name": "Uchronie Maybon",
-  "lang": "fr",
-  "tagline": "[[A_VERIFIER:accroche du site]]",
-  "description": "[[A_VERIFIER:description officielle de l'atelier]]",
+  "identity": {
+    "name": { "value": "Uchronie Maybon", "source": "docs/audit-site-existant.md", "verified": true },
+    "artisan": { "value": "Mélodie Maybon", "source": "docs/inventaire-contenu.csv", "verified": true },
+    "tagline": { "value": "Artisane D'art Rémoise", "source": "docs/inventaire-contenu.csv", "verified": true },
+    "description": { "value": "Artisane ébéniste, marqueteure et tabletière à proximité de Reims. Création de coffrets, étuis et objets en bois et cuir sur-mesure depuis le design jusqu'à la fabrication finale pour professionnels et particuliers.", "source": "docs/audit-site-existant.md", "verified": true }
+  },
   "contact": {
-    "address": "[[A_VERIFIER:adresse complète]]",
-    "city": "[[A_VERIFIER:ville]]",
-    "postal_code": "[[A_VERIFIER:code postal]]",
-    "phone": "[[A_VERIFIER:téléphone]]",
-    "email": "[[A_VERIFIER:email]]",
-    "hours": "[[A_VERIFIER:horaires]]"
+    "address": { "value": "68 bis rue Ponsardin, 51100 REIMS", "source": "https://melodiemaybon.wixsite.com/uchronie-maybon/contact", "verified": true },
+    "phone": { "value": "06 21 32 40 59", "source": "https://melodiemaybon.wixsite.com/uchronie-maybon/contact", "verified": true },
+    "email": { "value": "melodie.maybon+contact@gmail.com", "source": "https://melodiemaybon.wixsite.com/uchronie-maybon/contact", "verified": true },
+    "hours": { "value": "Du mardi au vendredi de 11h à 18h, le samedi de 10h à 19h", "source": "https://melodiemaybon.wixsite.com/uchronie-maybon", "verified": true }
   },
   "social": {
-    "instagram": "[[A_VERIFIER:url instagram]]",
-    "facebook": "[[A_VERIFIER:url facebook]]"
+    "instagram": { "value": "https://www.instagram.com/uchroniemaybon/", "source": "https://melodiemaybon.wixsite.com/uchronie-maybon", "verified": true },
+    "facebook": { "value": "https://www.facebook.com/uchroniemaybon", "source": "https://melodiemaybon.wixsite.com/uchronie-maybon", "verified": true }
   },
   "links": {
-    "official_site": "https://www.uchronie-maybon.com/",
-    "shop": "https://uchronie-maybon.sumupstore.com/"
+    "official_site": { "value": "[[A_VERIFIER:domaine final]]", "source": "docs/audit-site-existant.md", "verified": false },
+    "booking": { "value": "[[A_VERIFIER:url de réservation]]", "source": "docs/brief-client.md", "verified": false }
   }
 }

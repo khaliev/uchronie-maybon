@@ -1,13 +1,11 @@
 ---
 slug: rendez-vous
 title: Rendez-vous
-description: [[A_VERIFIER:méta description rendez-vous]]
+description: Prenez rendez-vous avec l'atelier Uchronie Maybon pour discuter de votre projet sur-mesure.
 ---
 
 # Rendez-vous
 
-[[À_COMPLÉTER — modalités de prise de rendez-vous / réservation]]
+Vous avez un projet en tête ou souhaitez visiter mon atelier ? 
 
-- [[A_VERIFIER:modalités et canaux de réservation]]
-- [[A_VERIFIER:horaires]]
-- [[A_VERIFIER:consentement RGPD]]
+N'hésitez pas à me contacter ou à réserver un créneau pour que nous puissions échanger de vive voix sur vos envies, votre budget et les réalisations possibles. 

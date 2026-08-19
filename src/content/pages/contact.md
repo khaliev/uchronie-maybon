@@ -1,15 +1,10 @@
 ---
 slug: contact
 title: Contact
-description: [[A_VERIFIER:méta description contact]]
+description: Contactez Uchronie Maybon pour un projet sur-mesure, une restauration ou pour visiter l'atelier à Reims.
 ---
 
-# Contact
+# Contactez-moi
 
-[[À_COMPLÉTER — coordonnées et formulaire]]
-
-- [[A_VERIFIER:adresse]]
-- [[A_VERIFIER:téléphone]]
-- [[A_VERIFIER:email]]
-- [[A_VERIFIER:horaires]]
-- [[A_VERIFIER:consentement RGPD pour le formulaire]]
+Un projet sur-mesure ? Une restauration à effectuer ? Un concept de boîte ? 
+N'hésitez pas à me contacter par téléphone ou par e-mail. Vous êtes également les bienvenus pour me rendre visite directement à la boutique !

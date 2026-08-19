@@ -7,44 +7,19 @@
 > exacte et explication courte**, puis confirmé et passé à `verified: true`
 > une fois sourcé.
 
-## À demander
-- [ ] Confirmer les coordonnées officielles (adresse, téléphone, email, horaires)
-- [ ] Valider les pages et rubriques souhaitées
-- [ ] Fournir photos / visuels autorisés et leurs droits d'utilisation
-- [ ] Valider les textes et le ton éditorial
-- [ ] Confirmer les horaires / modalités de rendez-vous et de réservation
-- [ ] Confirmer les réseaux sociaux / liens officiels
+## À demander obligatoirement (issus de l'audit et de l'extraction)
+- [ ] Confirmation du titre "Artisan d'art" CMA (logo présent sur le site).
+- [ ] Confirmation badge "Made in France" vs label "Made in Marne".
+- [ ] Droit à l'image du portrait de Mélodie pour utilisation sur le nouveau site.
+- [ ] Disponibilité du domaine `uchronie-maybon.com` (NXDOMAIN constaté lors de l'audit).
+- [ ] Confirmer les horaires / modalités de rendez-vous et de réservation.
+- [ ] Confirmer les réseaux sociaux / liens officiels.
 
 ## Placeholders `[[A_VERIFIER:...]]` à traiter
 
 ### src/content/site.json
-- [ ] `[[A_VERIFIER:accroche du site]]` — tagline : accroche officielle du site
-- [ ] `[[A_VERIFIER:description officielle de l'atelier]]` — description officielle de l'atelier
-- [ ] `[[A_VERIFIER:adresse complète]]` — contact.address : adresse de l'atelier
-- [ ] `[[A_VERIFIER:ville]]` — contact.city : ville
-- [ ] `[[A_VERIFIER:code postal]]` — contact.postal_code : code postal
-- [ ] `[[A_VERIFIER:téléphone]]` — contact.phone : téléphone officiel
-- [ ] `[[A_VERIFIER:email]]` — contact.email : email de contact
-- [ ] `[[A_VERIFIER:horaires]]` — contact.hours : horaires d'ouverture
-- [ ] `[[A_VERIFIER:url instagram]]` — social.instagram : URL officielle
-- [ ] `[[A_VERIFIER:url facebook]]` — social.facebook : URL officielle
-
-### src/content/services.json
-- [ ] `[[A_VERIFIER:introduction des savoir-faire]]` — intro : phrase d'intro
-- [ ] `[[A_VERIFIER:résumé ébénisterie]]` — services[0].summary (ébénisterie)
-- [ ] `[[A_VERIFIER:détail à compléter]]` — services[0].details (ébénisterie)
-- [ ] `[[A_VERIFIER:résumé tabletterie]]` — services[1].summary (tabletterie)
-- [ ] `[[A_VERIFIER:détail à compléter]]` — services[1].details (tabletterie)
-- [ ] `[[A_VERIFIER:résumé marqueterie et gainerie]]` — services[2].summary (marqueterie-gainerie)
-- [ ] `[[A_VERIFIER:détail à compléter]]` — services[2].details (marqueterie-gainerie)
-- [ ] `[[A_VERIFIER:résumé design produit]]` — services[3].summary (design-produit)
-- [ ] `[[A_VERIFIER:détail à compléter]]` — services[3].details (design-produit)
-
-### src/content/projects.json
-- [ ] `[[A_VERIFIER:introduction des réalisations]]` — intro : phrase d'intro
-
-### src/content/testimonials.json
-- [ ] `[[A_VERIFIER:introduction des témoignages]]` — intro : phrase d'intro
+- [ ] `[[A_VERIFIER:domaine final]]` — links.official_site : domaine officiel
+- [ ] `[[A_VERIFIER:url de réservation]]` — links.booking : url de réservation
 
 ## Validé par le client
 - _(à remplir)_
@@ -59,7 +34,5 @@
 - [ ] **RÉSEAUX SOCIAUX** : casse des identifiants différente — Wix footer : instagram.com/**uchroniemaybon** et facebook.com/**uchroniemaybon** (minuscules) ; SumUp footer : instagram.com/**UchronieMaybon** et facebook.com/**UchronieMaybon** (capitales). → Confirmer les URLs officielles.
 - [ ] **LIEN CASSÉ BOUTIQUE** : catégorie « MELI-MELO » du menu SumUp pointe vers `https://uchronie-maybon.sumupstore.com/error/404` (404). → Indiquer l'URL cible correcte ou supprimer la catégorie.
 - [ ] **TITRE PAGE D'ACCUEIL WIX** : « Ebeniste » (sans accent) VS autres pages « Ebénisterie » (avec accent). → Confirmer l'orthographe officielle du titre SEO.
-- [ ] **SLUGS PRODUITS** : URL `/product/<slug>` sur la page /produits VS `/article/<slug>` sur les pages catégories (même produit). → Sans impact métier, à clarifier pour le nouveau site.
 - [ ] **RÉCOMPENSES** : « 3ème place au concours du Noel de L'art 2019 sur le thème de l'Opéra » et « LABEL MADE IN MARNE » présents sur la page À propos (texte Wix). → À confirmer (orthographe « Noel de L'art » et date).
-- [ ] **HORAIRES** : « du mardi au vendredi: 11h-18h » / « samedi: 10h-19h » (Wix) ; aucun horaire visible sur la boutique SumUp. → Confirmer.
 - [ ] **RÉSERVATION** : aucun widget de réservation (Calendly/Google Calendar) trouvé sur les sites actuels. → Confirmer le souhait d'un système de RDV (cf. ADR-003 : Google Calendar).

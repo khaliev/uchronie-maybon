@@ -1,15 +1,11 @@
 ---
 slug: accueil
 title: Accueil
-description: [[A_VERIFIER:méta description accueil]]
+description: Artisane ébéniste, marqueteure et tabletière à proximité de Reims. Coffrets, étuis et créations en bois et cuir sur-mesure depuis le design jusqu'à la fabrication finale pour professionnels et particuliers.
 ---
 
-# Accueil
+# Artisane D'art Rémoise
 
-[[À_COMPLÉTER — contenu de la page d'accueil]]
+Bienvenue dans mon univers dédié à la tabletterie, à la fabrication de coffrets et de petits objets en bois. Je réalise pour vous des pièces uniques ou en petites séries, destinées tant aux professionnels qu'aux particuliers.
 
-- [[A_VERIFIER:accroche]]
-- [[A_VERIFIER:présentation rapide de l'atelier]]
-- [[A_VERIFIER:mise en avant des savoir-faire]]
-- [[A_VERIFIER:appels à l'action (contact, rendez-vous)]]
-- [[A_VERIFIER:visuels associés]]
+Mon atelier-boutique est situé à Reims : c'est à la fois un lieu de vente et de découverte. J'interviens principalement dans la région Champagne-Ardenne et en Île-de-France pour les déplacements. Vous pouvez également retrouver mes créations sur ma boutique en ligne.

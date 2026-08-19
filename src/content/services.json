@@ -1,33 +1,44 @@
 {
   "_meta": {
-    "source": "https://melodiemaybon.wixsite.com/uchronie-maybon",
-    "verified": false
+    "source": "docs/brief-client.md, docs/inventaire-contenu.csv",
+    "verified": true
   },
-  "intro": "[[A_VERIFIER:introduction des savoir-faire]]",
   "services": [
     {
       "slug": "ebenisterie",
-      "title": "Ébénisterie",
-      "summary": "[[A_VERIFIER:résumé ébénisterie]]",
-      "details": "[[A_VERIFIER:détail à compléter]]"
+      "title": { "value": "Ébénisterie", "source": "docs/brief-client.md", "verified": true },
+      "summary": { "value": "L'ébénisterie est le savoir-faire noble du travail du bois dans la fabrication de mobilier.", "source": "docs/inventaire-contenu.csv", "verified": true },
+      "details": { "value": "Je travaille à partir de l'existant pour transformer ou restaurer des meubles (placage, marqueterie, remise en état, vernissage). Je propose également la fabrication de petits espaces d'exposition et de présentoirs.", "source": "docs/inventaire-contenu.csv", "verified": true }
     },
     {
       "slug": "tabletterie",
-      "title": "Tabletterie",
-      "summary": "[[A_VERIFIER:résumé tabletterie]]",
-      "details": "[[A_VERIFIER:détail à compléter]]"
+      "title": { "value": "Tabletterie", "source": "docs/brief-client.md", "verified": true },
+      "summary": { "value": "La tabletterie est une branche de l'ébénisterie consistant à fabriquer de petits objets en bois, tels que des coffrets.", "source": "docs/inventaire-contenu.csv", "verified": true },
+      "details": { "value": "Hérité d'un savoir-faire du 18ème et 19ème siècle, ce métier permet de réaliser des pièces aussi fonctionnelles qu'agréables à l'œil. Que ce soit des coffrets à bijoux innovants ou des coffrets à champagne, je vous accompagne dans tous vos projets uniques.", "source": "docs/inventaire-contenu.csv", "verified": true }
     },
     {
-      "slug": "marqueterie-gainerie",
-      "title": "Marqueterie & gainerie",
-      "summary": "[[A_VERIFIER:résumé marqueterie et gainerie]]",
-      "details": "[[A_VERIFIER:détail à compléter]]"
+      "slug": "marqueterie",
+      "title": { "value": "Marqueterie", "source": "docs/brief-client.md", "verified": true },
+      "summary": { "value": "Conception de dessins formés grâce à un assemblage minutieux de matériaux comme le bois, le cuir, ou la paille.", "source": "docs/inventaire-contenu.csv", "verified": true },
+      "details": { "value": "Je recherche la modernité dans le dessin de mes marqueteries tout en préservant les grands classiques, tel que le motif de damier qui reste un incontournable de ce métier.", "source": "docs/inventaire-contenu.csv", "verified": true }
+    },
+    {
+      "slug": "gainerie",
+      "title": { "value": "Gainerie", "source": "docs/brief-client.md", "verified": true },
+      "summary": { "value": "Travail du cuir et du cuir synthétique pour sublimer et protéger vos objets.", "source": "docs/inventaire-contenu.csv", "verified": true },
+      "details": { "value": "Le mélange des matières est au cœur de mes créations, permettant d'offrir des finitions élégantes et durables qui singularisent chaque pièce.", "source": "docs/inventaire-contenu.csv", "verified": true }
     },
     {
       "slug": "design-produit",
-      "title": "Design produit",
-      "summary": "[[A_VERIFIER:résumé design produit]]",
-      "details": "[[A_VERIFIER:détail à compléter]]"
+      "title": { "value": "Design produit", "source": "docs/brief-client.md", "verified": true },
+      "summary": { "value": "Conception et infographie pour donner vie à vos projets sur-mesure.", "source": "docs/inventaire-contenu.csv", "verified": true },
+      "details": { "value": "J'élabore avec vous un cahier des charges précis, compatible avec votre budget, pour vous proposer des créations uniques de A à Z.", "source": "docs/inventaire-contenu.csv", "verified": true }
+    },
+    {
+      "slug": "packaging-de-luxe",
+      "title": { "value": "Packaging de luxe", "source": "docs/brief-client.md", "verified": true },
+      "summary": { "value": "Transformation de l'existant ou création complète en bois et cuir synthétique.", "source": "docs/inventaire-contenu.csv", "verified": true },
+      "details": { "value": "Création d'écrins et de packagings haut de gamme avec la possibilité d'intégrer des logos en marqueterie ou gravés.", "source": "docs/inventaire-contenu.csv", "verified": true }
     }
   ]
 }

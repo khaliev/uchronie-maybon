@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "source": "https://melodiemaybon.wixsite.com/uchronie-maybon",
-    "verified": false
+    "source": "docs/audit-site-existant.md",
+    "verified": true
   },
-  "intro": "[[A_VERIFIER:introduction des témoignages]]",
+  "intro": "Aucun témoignage n'est disponible pour le moment.",
   "testimonials": []
 }

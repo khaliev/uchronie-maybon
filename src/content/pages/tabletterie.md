@@ -1,14 +1,11 @@
 ---
 slug: tabletterie
 title: Tabletterie
-description: [[A_VERIFIER:méta description tabletterie]]
+description: La tabletterie, un savoir-faire de niche pour la création de coffrets à bijoux et objets en bois sur-mesure.
 ---
 
-# Tabletterie
+# La tabletterie, un savoir-faire de niche
 
-[[À_COMPLÉTER — contenu détaillé de l'activité tabletterie]]
+La tabletterie est une branche de l'ébénisterie qui consiste à fabriquer de petits objets en bois (tablettes à écrire, peignes, manches de canne, dominos, éventails, etc.). À la fin du 18ème et au début du 19ème siècle (plus particulièrement sous le Premier Empire), ce savoir-faire s'est étendu à la création de coffrets en bois, destinés aux classes sociales de l'époque qui pouvaient se permettre de voyager.
 
-- [[A_VERIFIER:description de l'activité]]
-- [[A_VERIFIER:typologies de réalisations]]
-- [[A_VERIFIER:matériaux et techniques]]
-- [[A_VERIFIER:projets associés (projects.json)]]
+Je vous propose des pièces aussi fonctionnelles qu'agréables à l'œil, convaincue que le plaisir de l'utilisation passe également par l'esthétique. Qu'il s'agisse de coffrets à bijoux innovants ou de coffrets à champagne personnalisés, je conçois des pièces uniques et vous accompagne tout au long de vos projets.
