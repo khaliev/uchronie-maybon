@@ -25,6 +25,8 @@ Fabriquant chaque pièce de A à Z, je mets un point d'honneur à me fournir en 
 ## Formation
 En faisant appel à moi, vous avez l'assurance de travailler avec une artisane forte de sept années d'études : trois ans en design produit et quatre ans en ébénisterie.
 
+![Détail de marqueterie géométrique](/assets/images/originals/detail-marqueterie-geometrique-bois.jpg)
+
 ## Récompenses et Prix
 - 3ème place au concours du Noël de l'Art 2019 sur le thème de l'Opéra.
 - LABEL MADE IN MARNE.
