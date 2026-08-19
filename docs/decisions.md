@@ -137,22 +137,20 @@ _(à remplir au fil des tâches)_
 - **Conséquences** : Les pages Markdown doivent être rigoureusement créées avec les slugs définis dans l'architecture, et le header/footer construits autour de cette arborescence.
 - **Statut** : actée
 
-{
-  "_meta": {
-    "source": "https://melodiemaybon.wixsite.com/uchronie-maybon",
-    "verified": false
-  },
-  "items": [
-    { "label": "Accueil", "href": "/", "order": 0 },
-    { "label": "À propos", "href": "/a-propos/", "order": 1 },
-    { "label": "Savoir-faire", "href": "/savoir-faire/", "order": 2, "children": [
-      { "label": "Ébénisterie", "href": "/ebenisterie/" },
-      { "label": "Tabletterie", "href": "/tabletterie/" },
-      { "label": "Marqueterie & gainerie", "href": "/marqueterie-gainerie/" }
-    ]},
-    { "label": "Réalisations", "href": "/realisations/", "order": 3 },
-    { "label": "Professionnels", "href": "/professionnels/", "order": 4 },
-    { "label": "Contact", "href": "/contact/", "order": 5 },
-    { "label": "Rendez-vous", "href": "/rendez-vous/", "order": 6 }
-  ]
-}
+---
+
+### ADR-008 — Design System "Le geste ancien, le dessin contemporain" (T05)
+- **Date** : 2026-08-19
+- **Tâche** : T05
+- **Décision** : Mise en place d'un design system complet en Pur CSS sans framework (total ~35 Ko non compressé, < 12 Ko compressé), articulé autour des tokens de couleur identitaires : Bordeaux (`#681D2A`), Champagne (`#C5A46D`), Ivoire (`#F5F0E7`), Noyer (`#49352A`), Ébène (`#171411`).
+  - Typographie : `Cormorant Garamond` (titres éditoriaux serif) et `Inter` (sans-serif textuelle lisible), chargées via Bunny Fonts (respect de la vie privée / RGPD) avec fallbacks système robustes.
+  - Principes visuels : Lignes fines d'incrustation inspirées de la marqueterie, damier filigrane très subtil, micro-arrondis contemporains (2-4px), respiration généreuse, absence totale de rouages/steampunk ou de textures bois omniprésentes.
+  - Accessibilité : Conformité WCAG AA systématique. Utilisation du champagne uniquement sur fond sombre ou pour les liserés décoratifs ; le texte standard repose sur l'ébène/noyer/bordeaux sur fond ivoire (ratios 7.8:1 à 14.2:1). Tailles tactiles minimales de 44px, `:focus-visible` distinctif et respect strict de `prefers-reduced-motion`.
+- **Contexte** : Établir une identité visuelle artisanale haut de gamme sobre et performante pour la vitrine d'Uchronie Maybon.
+- **Alternatives rejetées** :
+  - Framework CSS (Tailwind, Bootstrap) : rejeté pour garantir l'absence de dépendances et une charge de maintenance minimale.
+  - Thème sombre par défaut : rejeté pour préserver l'ambiance "atelier & papier chaud" du fond ivoire.
+- **Conséquences** : Les templates de T06 et les pages de T07 utiliseront exclusivement ces classes et variables CSS.
+- **Statut** : actée
+
+**Mise à jour 2026-08-19 :** Polices auto-hébergées en WOFF2 (8 fichiers, ~180 Ko total) pour éliminer la dépendance Bunny Fonts et optimiser le temps de chargement initial (économie estimée : 300-500ms au LCP).

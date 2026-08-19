@@ -1,2 +1,53 @@
-/* Utilitaires — à compléter en T05/T07 (classes génériques, uniquement si nécessaires) */
-/* .u-hidden, .u-visually-hidden, .u-container … */
+/**
+ * Uchronie Maybon — Utilitaires CSS
+ */
+
+/* 1. Accessibilité : Masquage visuel tout en restant accessible aux lecteurs d'écran */
+.u-visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* 2. Alignements de texte */
+.u-text-center { text-align: center !important; }
+.u-text-left { text-align: left !important; }
+.u-text-right { text-align: right !important; }
+
+/* 3. Couleurs de texte directes */
+.u-color-bordeaux { color: var(--color-bordeaux) !important; }
+.u-color-champagne { color: var(--color-champagne-dark) !important; }
+.u-color-noyer { color: var(--color-noyer) !important; }
+.u-color-muted { color: var(--color-text-muted) !important; }
+
+/* 4. Marges de respiration (margin-block-end) */
+.u-mb-0 { margin-block-end: 0 !important; }
+.u-mb-xs { margin-block-end: var(--space-xs) !important; }
+.u-mb-sm { margin-block-end: var(--space-sm) !important; }
+.u-mb-md { margin-block-end: var(--space-md) !important; }
+.u-mb-lg { margin-block-end: var(--space-lg) !important; }
+.u-mb-xl { margin-block-end: var(--space-xl) !important; }
+.u-mb-2xl { margin-block-end: var(--space-2xl) !important; }
+
+.u-mt-0 { margin-block-start: 0 !important; }
+.u-mt-sm { margin-block-start: var(--space-sm) !important; }
+.u-mt-md { margin-block-start: var(--space-md) !important; }
+.u-mt-lg { margin-block-start: var(--space-lg) !important; }
+.u-mt-xl { margin-block-start: var(--space-xl) !important; }
+
+/* 5. Ratios d'aspect pour médias */
+.u-ratio-1-1 { aspect-ratio: 1 / 1; }
+.u-ratio-4-3 { aspect-ratio: 4 / 3; }
+.u-ratio-16-9 { aspect-ratio: 16 / 9; }
+
+/* 6. Motif damier décoratif artisanal (très subtil) */
+.u-bg-damier {
+  background-image: radial-gradient(var(--color-champagne-subtle) 1px, transparent 1px);
+  background-size: 20px 20px;
+}

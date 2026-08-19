@@ -1,15 +1,15 @@
 {
   "project": "uchronie-maybon",
   "updated": "2026-08-19",
-  "phase": "T05-in-progress",
-  "notes": "Architecture technique et SEO finalisés. Prêt pour le design.",
+  "phase": "implementation",
+  "notes": "Prêt pour le build et les templates",
   "tasks": {
     "T00": "done",
     "T01": "done",
     "T02": "done",
     "T03": "done",
     "T04": "done",
-    "T05": "pending",
+    "T05": "done",
     "T06": "pending",
     "T07": "pending",
     "T08": "pending",
@@ -18,6 +18,6 @@
     "T11": "pending",
     "T12": "pending"
   },
-  "current_task": "T05",
+  "current_task": "T06",
   "blocks": []
 }

@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Styleguide & Design System — Uchronie Maybon</title>
+  
+  <!-- CSS Design System -->
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/utilities.css">
+
+  <style>
+    /* Styles spécifiques d'isolation pour le Styleguide */
+    .sg-intro {
+      background-color: var(--color-bg-alt);
+      border-block-end: 1px solid var(--color-border);
+      padding-block: var(--space-xl);
+    }
+    .sg-section-title {
+      border-block-end: 2px solid var(--color-bordeaux);
+      padding-block-end: var(--space-2xs);
+      margin-block-start: var(--space-3xl);
+      margin-block-end: var(--space-xl);
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+    }
+    .sg-color-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: var(--space-md);
+    }
+    .sg-swatch {
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      background: #FFFFFF;
+      box-shadow: var(--shadow-sm);
+    }
+    .sg-swatch-color {
+      height: 100px;
+      width: 100%;
+    }
+    .sg-swatch-info {
+      padding: var(--space-xs);
+      font-size: var(--font-size-xs);
+    }
+    .sg-swatch-name {
+      font-weight: var(--font-weight-bold);
+      margin-block-end: 2px;
+    }
+    .sg-type-sample {
+      margin-block-end: var(--space-lg);
+      padding-block-end: var(--space-sm);
+      border-block-end: 1px dashed var(--color-border);
+    }
+    .sg-box-example {
+      padding: var(--space-lg);
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+
+  <!-- BANDEAU DE PRÉSENTATION DU STYLEGUIDE -->
+  <header class="sg-intro">
+    <div class="container">
+      <span class="section-eyebrow">Documentation Visuelle & Technique</span>
+      <h1>Design System — Uchronie Maybon</h1>
+      <p class="lead">« Le geste ancien, le dessin contemporain » — Spécification complète des tokens de design, de la typographie, des contrastes d'accessibilité et des composants réutilisables.</p>
+    </div>
+  </header>
+
+  <main id="main" class="container u-mb-4xl">
+
+    <!-- 1. PALETTE DE COULEURS & CONTRASTES WCAG -->
+    <section aria-labelledby="sg-colors">
+      <div class="sg-section-title">
+        <h2 id="sg-colors">1. Palette & Contrastes</h2>
+        <span class="badge badge-artisan">WCAG AA Conforme</span>
+      </div>
+
+      <div class="sg-color-grid">
+        <div class="sg-swatch">
+          <div class="sg-swatch-color" style="background-color: #681D2A;"></div>
+          <div class="sg-swatch-info">
+            <div class="sg-swatch-name">Bordeaux</div>
+            <code>#681D2A</code>
+            <div>Ratio s/ Ivoire : <strong>7.8:1 (AAA)</strong></div>
+          </div>
+        </div>
+
+        <div class="sg-swatch">
+          <div class="sg-swatch-color" style="background-color: #C5A46D;"></div>
+          <div class="sg-swatch-info">
+            <div class="sg-swatch-name">Champagne</div>
+            <code>#C5A46D</code>
+            <div>Détails & Liserés (ou s/ sombre)</div>
+          </div>
+        </div>
+
+        <div class="sg-swatch">
+          <div class="sg-swatch-color" style="background-color: #F5F0E7;"></div>
+          <div class="sg-swatch-info">
+            <div class="sg-swatch-name">Ivoire (Fond)</div>
+            <code>#F5F0E7</code>
+            <div>Papier chaud minéral</div>
+          </div>
+        </div>
+
+        <div class="sg-swatch">
+          <div class="sg-swatch-color" style="background-color: #49352A;"></div>
+          <div class="sg-swatch-info">
+            <div class="sg-swatch-name">Noyer</div>
+            <code>#49352A</code>
+            <div>Ratio s/ Ivoire : <strong>8.5:1 (AAA)</strong></div>
+          </div>
+        </div>
+
+        <div class="sg-swatch">
+          <div class="sg-swatch-color" style="background-color: #171411;"></div>
+          <div class="sg-swatch-info">
+            <div class="sg-swatch-name">Ébène (Texte)</div>
+            <code>#171411</code>
+            <div>Ratio s/ Ivoire : <strong>14.2:1 (AAA)</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. TYPOGRAPHIE & HIÉRARCHIE -->
+    <section aria-labelledby="sg-typo">
+      <div class="sg-section-title">
+        <h2 id="sg-typo">2. Typographie</h2>
+        <span class="badge badge-mif">Cormorant Garamond + Inter</span>
+      </div>
+
+      <div class="sg-type-sample">
+        <h1>Titre H1 — Artisane d'art Rémoise</h1>
+        <p class="u-color-muted">Font-family: Cormorant Garamond / Size: clamp(2.5rem, 3.75rem)</p>
+      </div>
+
+      <div class="sg-type-sample">
+        <h2>Titre H2 — Ébénisterie & Tabletterie Contemporaine</h2>
+        <p class="u-color-muted">Font-family: Cormorant Garamond / Size: clamp(2rem, 2.75rem)</p>
+      </div>
+
+      <div class="sg-type-sample">
+        <h3>Titre H3 — Savoir-faire, marqueterie et gainerie</h3>
+        <p class="u-color-muted">Font-family: Cormorant Garamond / Size: clamp(1.625rem, 2rem)</p>
+      </div>
+
+      <div class="sg-type-sample">
+        <h4>Titre H4 — Créations uniques et petites séries</h4>
+      </div>
+
+      <div class="sg-type-sample">
+        <h5>Titre H5 — Conception & Design Produit</h5>
+      </div>
+
+      <div class="sg-type-sample">
+        <h6>Titre H6 / Sur-titre — Label Made in Marne</h6>
+      </div>
+
+      <div class="sg-box-example u-mt-md">
+        <p class="lead"><strong>Paragraphe d'introduction (Lead) :</strong> Mélodie Maybon dépoussière le métier de tabletière et marqueteure. Mélanger les matières nobles entre elles dans ses créations fait sa particularité.</p>
+        <p><strong>Corps de texte standard :</strong> Travaillant dans sa boutique-atelier à Reims, son objectif est de concevoir vos projets en établissant un cahier des charges compatible avec votre budget. Vous retrouverez les grands classiques de l'ébénisterie avec le motif de damier symbolique.</p>
+        <blockquote>« Le plaisir de l'utilisation passe aussi par l'esthétique du geste artisanal. »</blockquote>
+      </div>
+    </section>
+
+    <!-- 3. BOUTONS & ÉTATS INTERACTIFS -->
+    <section aria-labelledby="sg-buttons">
+      <div class="sg-section-title">
+        <h2 id="sg-buttons">3. Boutons & Actions</h2>
+      </div>
+
+      <div class="flex flex-wrap gap-md items-center u-mb-lg">
+        <a href="#0" class="btn btn-primary">Bouton Primaire</a>
+        <a href="#0" class="btn btn-secondary">Bouton Secondaire</a>
+        <a href="#0" class="btn btn-outline">Bouton Contour</a>
+        <a href="https://uchronie-maybon.sumupstore.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-icon-ext">Boutique en ligne</a>
+      </div>
+
+      <div class="flex flex-wrap gap-md items-center u-mb-lg">
+        <a href="#0" class="btn btn-primary btn-sm">Petit (sm)</a>
+        <a href="#0" class="btn btn-primary">Normal</a>
+        <a href="#0" class="btn btn-primary btn-lg">Grand (lg)</a>
+        <button type="button" class="btn btn-primary" disabled>Désactivé</button>
+      </div>
+
+      <div class="sg-box-example section-dark u-mb-lg">
+        <p class="u-color-champagne u-mb-sm">Variante sur fond sombre :</p>
+        <div class="flex flex-wrap gap-md">
+          <a href="#0" class="btn btn-champagne">Bouton Champagne</a>
+          <a href="#0" class="btn btn-outline" style="color: var(--color-ivoire); border-color: var(--color-champagne);">Contour Doré</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. HEADER & NAVIGATION DEMO -->
+    <section aria-labelledby="sg-header">
+      <div class="sg-section-title">
+        <h2 id="sg-header">4. En-tête & Navigation</h2>
+      </div>
+
+      <div class="sg-box-example" style="padding: 0; overflow: hidden;">
+        <div class="site-header" style="position: relative;">
+          <div class="container header-inner">
+            <a href="/" class="brand">
+              <img src="../assets/images/originals/logo-uchronie-maybon-complet.png" alt="Logo Uchronie Maybon" class="brand-logo">
+              <div class="brand-text">
+                <span class="brand-title">Uchronie Maybon</span>
+                <span class="brand-tagline">Ébénisterie & Tabletterie d'art</span>
+              </div>
+            </a>
+
+            <nav class="nav-desktop" aria-label="Navigation principale de démonstration">
+              <ul class="nav-list">
+                <li><a href="/" class="nav-link" aria-current="page">Accueil</a></li>
+                <li><a href="/a-propos/" class="nav-link">À propos</a></li>
+                <li><a href="/savoir-faire/" class="nav-link">Savoir-faire</a></li>
+                <li><a href="/realisations/" class="nav-link">Réalisations</a></li>
+                <li><a href="/professionnels/" class="nav-link">Professionnels</a></li>
+                <li><a href="/contact/" class="nav-link">Contact</a></li>
+                <li><a href="https://uchronie-maybon.sumupstore.com/" target="_blank" rel="noopener noreferrer" class="nav-link nav-link-shop">Boutique ↗</a></li>
+              </ul>
+            </nav>
+
+            <button type="button" class="nav-toggle" aria-expanded="false" aria-label="Menu mobile">
+              <span class="nav-toggle-line"></span>
+              <span class="nav-toggle-line"></span>
+              <span class="nav-toggle-line"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. HERO SECTION DEMO -->
+    <section aria-labelledby="sg-hero">
+      <div class="sg-section-title">
+        <h2 id="sg-hero">5. Hero Section</h2>
+      </div>
+
+      <div class="hero sg-box-example" style="padding: var(--space-xl);">
+        <div class="hero-layout">
+          <div class="hero-content">
+            <span class="hero-subtitle">Atelier à Reims • Artisane d'art</span>
+            <h2 class="hero-title">Le geste ancien,<br>le dessin contemporain.</h2>
+            <p class="hero-description">Tabletterie de précision, coffrets d'exception, marqueterie graphique et mobilier sur-mesure confectionnés à la main.</p>
+            <div class="hero-actions">
+              <a href="/realisations/" class="btn btn-primary">Découvrir les créations</a>
+              <a href="/contact/" class="btn btn-outline">Prendre rendez-vous</a>
+            </div>
+          </div>
+          <div class="hero-media">
+            <div class="hero-image-frame">
+              <img src="../assets/images/originals/coffrets-cubes-colores-vue-plongee.png" alt="Coffrets en bois de Mélodie Maybon" class="hero-image">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. CARTES DE SAVOIR-FAIRE -->
+    <section aria-labelledby="sg-cards">
+      <div class="sg-section-title">
+        <h2 id="sg-cards">6. Cartes de Savoir-faire</h2>
+      </div>
+
+      <div class="grid grid-3">
+        <article class="card">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+          </div>
+          <h3 class="card-title">Ébénisterie</h3>
+          <p class="card-text">Fabrication de mobilier contemporain, petites restaurations soignées et transformation d'espaces d'exposition sur-mesure.</p>
+          <a href="/ebenisterie/" class="card-link">En savoir plus ↗</a>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+          </div>
+          <h3 class="card-title">Tabletterie</h3>
+          <p class="card-text">Conception de coffrets d'exception, boîtes à bijoux innovantes et étuis précieux alliant fonctionnalité et plaisir visuel.</p>
+          <a href="/tabletterie/" class="card-link">En savoir plus ↗</a>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+          </div>
+          <h3 class="card-title">Marqueterie & Gainerie</h3>
+          <p class="card-text">Dessins géométriques minutieux et assemblage de bois, cuirs et matières nobles pour sublimer chaque création.</p>
+          <a href="/marqueterie-gainerie/" class="card-link">En savoir plus ↗</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- 7. GALERIE DE RÉALISATIONS & FILTRES -->
+    <section aria-labelledby="sg-gallery">
+      <div class="sg-section-title">
+        <h2 id="sg-gallery">7. Galerie & Filtres</h2>
+      </div>
+
+      <div class="filter-bar" role="group" aria-label="Filtrer les réalisations">
+        <button type="button" class="filter-btn is-active" aria-pressed="true">Toutes les pièces</button>
+        <button type="button" class="filter-btn" aria-pressed="false">Tabletterie & Coffrets</button>
+        <button type="button" class="filter-btn" aria-pressed="false">Marqueterie</button>
+        <button type="button" class="filter-btn" aria-pressed="false">Mobilier</button>
+        <button type="button" class="filter-btn" aria-pressed="false">Professionnels</button>
+      </div>
+
+      <div class="grid grid-3">
+        <a href="/realisations/#arlequin" class="project-card">
+          <div class="project-media">
+            <img src="../assets/images/originals/collection-arlequin-multicolore.jpg" alt="Collection Arlequin" class="project-img">
+            <span class="project-badge">Tabletterie</span>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Collection Arlequin</h3>
+            <p class="project-desc">Ensemble de coffrets et étuis géométriques multicolores type Mondrian.</p>
+          </div>
+        </a>
+
+        <a href="/realisations/#marqueterie" class="project-card">
+          <div class="project-media">
+            <img src="../assets/images/originals/detail-marqueterie-geometrique-bois.jpg" alt="Détail marqueterie géométrique" class="project-img">
+            <span class="project-badge">Marqueterie</span>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Marqueterie Géométrique</h3>
+            <p class="project-desc">Composition en triangles de bois clair et teinté.</p>
+          </div>
+        </a>
+
+        <a href="/realisations/#table-ronde" class="project-card">
+          <div class="project-media">
+            <img src="../assets/images/originals/table-ronde-marqueterie-florale.jpg" alt="Table ronde en marqueterie" class="project-img">
+            <span class="project-badge">Mobilier</span>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Table Ronde Florale</h3>
+            <p class="project-desc">Placage en rayons et médaillon floral traditionnel.</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- 8. FORMULAIRE DE CONTACT -->
+    <section aria-labelledby="sg-form">
+      <div class="sg-section-title">
+        <h2 id="sg-form">8. Formulaires</h2>
+      </div>
+
+      <div class="sg-box-example" style="max-width: var(--container-narrow-width); margin-inline: auto;">
+        <form action="#0" method="post" onsubmit="event.preventDefault();">
+          <div class="grid grid-2">
+            <div class="form-group">
+              <label for="name" class="form-label">Votre nom complet *</label>
+              <input type="text" id="name" name="name" class="form-input" placeholder="Ex. Claire Delacroix" required>
+            </div>
+            <div class="form-group">
+              <label for="email" class="form-label">Votre adresse e-mail *</label>
+              <input type="email" id="email" name="email" class="form-input" placeholder="nom@exemple.fr" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="subject" class="form-label">Nature de votre projet</label>
+            <select id="subject" name="subject" class="form-select">
+              <option value="coffret">Création de coffret / Tabletterie</option>
+              <option value="mobilier">Mobilier sur-mesure</option>
+              <option value="restauration">Restauration ou transformation</option>
+              <option value="pro">Projet pour professionnels / Entreprise</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message" class="form-label">Votre message ou cahier des charges *</label>
+            <textarea id="message" name="message" class="form-textarea" placeholder="Décrivez les dimensions souhaitées, l'usage, les matières..." required></textarea>
+            <span class="form-hint">Nous vous répondons généralement sous 48h ouvrées.</span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-checkbox-label">
+              <input type="checkbox" name="consent" class="form-checkbox" required>
+              <span>J'accepte que les informations saisies soient utilisées pour me recontacter dans le cadre de ma demande.</span>
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg u-mt-sm">Envoyer ma demande</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- 9. CONSENTEMENT RÉSERVATION -->
+    <section aria-labelledby="sg-consent">
+      <div class="sg-section-title">
+        <h2 id="sg-consent">9. Consentement Rendez-vous (RGPD)</h2>
+      </div>
+
+      <div class="booking-consent-box">
+        <div class="booking-consent-icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <h3 class="booking-consent-title">Prise de rendez-vous en ligne</h3>
+        <p class="booking-consent-text">Pour vous permettre de choisir un créneau directement dans l'agenda de l'atelier, nous utilisons le service Google Calendar. Son affichage nécessite votre consentement pour le chargement des ressources externes.</p>
+        <div class="flex justify-center gap-sm flex-wrap">
+          <button type="button" class="btn btn-primary">Accepter et afficher l'agenda</button>
+          <a href="/contact/" class="btn btn-outline">Prendre RDV par téléphone ou e-mail</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 10. FOOTER COMPLET -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3 class="footer-col-title">Uchronie Maybon</h3>
+          <p class="u-color-muted" style="font-size: var(--font-size-sm); color: var(--color-ivoire-dark);">Atelier d'ébénisterie d'art, tabletterie et marqueterie contemporaine.</p>
+          <div class="flex gap-xs u-mt-md">
+            <span class="badge badge-mif">Made in Marne</span>
+            <span class="badge badge-artisan" style="color: var(--color-champagne-light); border-color: var(--color-champagne);">Artisan d'art</span>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="footer-col-title">Boutique & Atelier</h3>
+          <div class="footer-contact-item">
+            <span>📍 68 bis rue Ponsardin, 51100 Reims</span>
+          </div>
+          <div class="footer-contact-item">
+            <span>🕒 Mar–Ven: 11h–18h | Sam: 10h–19h</span>
+          </div>
+          <div class="footer-contact-item">
+            <span>📞 06 21 32 40 59</span>
+          </div>
+          <div class="footer-contact-item">
+            <span>✉️ melodie.maybon+contact@gmail.com</span>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="footer-col-title">Navigation</h3>
+          <ul class="footer-links">
+            <li><a href="/a-propos/" class="footer-link">L'Atelier & Histoire</a></li>
+            <li><a href="/savoir-faire/" class="footer-link">Les Savoir-faire</a></li>
+            <li><a href="/realisations/" class="footer-link">Galerie des Créations</a></li>
+            <li><a href="/professionnels/" class="footer-link">Espace Entreprises</a></li>
+            <li><a href="/rendez-vous/" class="footer-link">Prendre Rendez-vous</a></li>
+            <li><a href="https://uchronie-maybon.sumupstore.com/" target="_blank" rel="noopener noreferrer" class="footer-link">Boutique en ligne ↗</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer-col-title">Suivez l'Atelier</h3>
+          <p style="font-size: var(--font-size-xs); color: var(--color-ivoire-dark);">Découvrez les coulisses de la création et les pièces en cours d'élaboration sur nos réseaux.</p>
+          <div class="footer-social-list">
+            <a href="https://www.instagram.com/uchroniemaybon/" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Instagram Uchronie Maybon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="https://www.facebook.com/uchroniemaybon" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Facebook Uchronie Maybon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/company/uchronie-maybon/" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="LinkedIn Uchronie Maybon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Uchronie Maybon — Tous droits réservés.</span>
+        <div class="flex gap-md">
+          <a href="/mentions-legales/" class="footer-link">Mentions légales</a>
+          <a href="/politique-de-confidentialite/" class="footer-link">Politique de confidentialité</a>
+          <a href="/gestion-des-cookies/" class="footer-link">Gestion des cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

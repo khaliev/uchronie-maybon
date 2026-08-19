@@ -1,25 +1,209 @@
-/* Design tokens — à compléter en T05 (inspiration bois, marqueterie, damier,
-   patrimoine). Ne pas implémenter de style final ici. */
+/**
+ * Uchronie Maybon — Design Tokens
+ * "Le geste ancien, le dessin contemporain"
+ * Palette : Bordeaux (#681D2A), Champagne (#C5A46D), Ivoire (#F5F0E7), Noyer (#49352A), Ébène (#171411)
+ */
+
+/* ==========================================================================
+   POLICES AUTO-HÉBERGÉES (WOFF2)
+   ========================================================================== */
+
+/* Cormorant Garamond */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/cormorant-garamond-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../fonts/cormorant-garamond-500.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../fonts/cormorant-garamond-600.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/cormorant-garamond-700.woff2') format('woff2');
+}
+
+/* Inter */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/inter-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../fonts/inter-500.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../fonts/inter-600.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/inter-700.woff2') format('woff2');
+}
+
 :root {
-  /* Couleurs */
-  --color-bg: [[T05]];
-  --color-text: [[T05]];
-  --color-accent: [[T05]];
+  /* ==========================================================================
+     1. PALETTE DE COULEURS
+     ========================================================================== */
+  /* Couleurs primaires identitaires */
+  --color-bordeaux: #681D2A;
+  --color-bordeaux-dark: #4A121D;
+  --color-bordeaux-light: #852B3C;
+  --color-bordeaux-subtle: rgba(104, 29, 42, 0.08);
 
-  /* Typographies */
-  --font-display: [[T05]];
-  --font-body: [[T05]];
+  --color-champagne: #C5A46D;
+  --color-champagne-light: #E0C89E;
+  --color-champagne-dark: #A3824D;
+  --color-champagne-subtle: rgba(197, 164, 109, 0.15);
 
-  /* Espacements */
-  --space-1: [[T05]];
-  --space-2: [[T05]];
-  --space-3: [[T05]];
+  --color-ivoire: #F5F0E7;
+  --color-ivoire-light: #FAF7F2;
+  --color-ivoire-dark: #E8DFC8;
+  --color-ivoire-muted: #D9CEB4;
 
-  /* Rayons, ombres, transitions */
-  --radius: [[T05]];
-  --shadow: [[T05]];
-  --transition: [[T05]];
+  --color-noyer: #49352A;
+  --color-noyer-light: #6A5142;
+  --color-noyer-dark: #2E1F18;
 
-  /* Accessibilité */
-  --focus-ring: [[T05]];
+  --color-ebene: #171411;
+  --color-ebene-soft: #26221D;
+
+  /* Couleurs fonctionnelles d'arrière-plan et de surface */
+  --color-bg: var(--color-ivoire);
+  --color-bg-alt: var(--color-ivoire-light);
+  --color-bg-dark: var(--color-ebene);
+  --color-bg-bordeaux: var(--color-bordeaux);
+  --color-bg-card: #FFFFFF;
+
+  /* Couleurs de texte (Accessibilité contrastes WCAG AA validée) */
+  --color-text: var(--color-ebene);
+  --color-text-muted: var(--color-noyer);
+  --color-text-light: #FFFFFF;
+  --color-text-champagne: var(--color-champagne-light);
+
+  /* Bordures et séparateurs inspirés du filet de marqueterie */
+  --color-border: var(--color-ivoire-dark);
+  --color-border-subtle: rgba(73, 53, 42, 0.12);
+  --color-border-champagne: var(--color-champagne);
+  --color-border-bordeaux: var(--color-bordeaux);
+
+  /* États interactifs */
+  --color-focus: var(--color-bordeaux);
+  --color-focus-ring: rgba(104, 29, 42, 0.35);
+
+  /* ==========================================================================
+     2. TYPOGRAPHIE
+     ========================================================================== */
+  --font-serif: "Cormorant Garamond", "Playfair Display", "Didot", "Georgia", serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  --font-title: var(--font-serif);
+  --font-body: var(--font-sans);
+
+  /* Échelle modulaire et fluide (clamp) */
+  --font-size-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.8125rem); /* 12-13px */
+  --font-size-sm: clamp(0.875rem, 0.825rem + 0.25vw, 0.9375rem); /* 14-15px */
+  --font-size-base: clamp(1rem, 0.95rem + 0.25vw, 1.0625rem); /* 16-17px */
+  --font-size-md: clamp(1.125rem, 1.05rem + 0.35vw, 1.25rem); /* 18-20px */
+  --font-size-lg: clamp(1.3125rem, 1.2rem + 0.5vw, 1.5rem); /* 21-24px */
+  --font-size-xl: clamp(1.625rem, 1.45rem + 0.8vw, 2rem); /* 26-32px */
+  --font-size-2xl: clamp(2rem, 1.7rem + 1.5vw, 2.75rem); /* 32-44px */
+  --font-size-3xl: clamp(2.5rem, 2rem + 2.5vw, 3.75rem); /* 40-60px */
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --line-height-tight: 1.15;
+  --line-height-heading: 1.25;
+  --line-height-base: 1.65;
+  --line-height-relaxed: 1.8;
+
+  --letter-spacing-tight: -0.02em;
+  --letter-spacing-normal: 0em;
+  --letter-spacing-wide: 0.04em;
+  --letter-spacing-caps: 0.12em;
+
+  /* ==========================================================================
+     3. ESPACEMENTS ET GRILLE
+     ========================================================================== */
+  --space-3xs: 0.25rem;  /* 4px */
+  --space-2xs: 0.5rem;   /* 8px */
+  --space-xs: 0.75rem;   /* 12px */
+  --space-sm: 1rem;      /* 16px */
+  --space-md: 1.5rem;    /* 24px */
+  --space-lg: 2rem;      /* 32px */
+  --space-xl: 3rem;      /* 48px */
+  --space-2xl: 4.5rem;   /* 72px */
+  --space-3xl: 6rem;     /* 96px */
+  --space-4xl: 8rem;     /* 128px */
+
+  /* Section padding fluide */
+  --section-padding-block: clamp(3rem, 2rem + 4vw, 6.5rem);
+  --container-gutter: clamp(1rem, 0.75rem + 1.5vw, 2.5rem);
+  --container-max-width: 75rem; /* 1200px */
+  --container-narrow-width: 52rem; /* 832px */
+
+  /* ==========================================================================
+     4. ÉLÉMENTS GRAPHIQUES (Rayons, Ombres, Filets de Marqueterie)
+     ========================================================================== */
+  /* Angles nets avec micro-arrondi contemporain */
+  --radius-none: 0px;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-full: 9999px;
+
+  /* Ombres douces minérales */
+  --shadow-sm: 0 1px 3px rgba(23, 20, 17, 0.05);
+  --shadow-md: 0 4px 12px rgba(23, 20, 17, 0.07);
+  --shadow-lg: 0 10px 28px rgba(23, 20, 17, 0.09);
+  --shadow-hover: 0 8px 24px rgba(104, 29, 42, 0.12);
+
+  /* Transitions précises */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Dimensions interactives accessibles (WCAG) */
+  --target-min-size: 44px;
+
+  /* Motif damier discret (filigrane artisanal) */
+  --pattern-damier: repeating-conic-gradient(
+    var(--color-ivoire-dark) 0% 25%,
+    transparent 0% 50%
+  ) 50% / 24px 24px;
 }
