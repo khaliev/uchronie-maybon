@@ -1,0 +1,24 @@
+/* Layout global — à compléter en T05/T07 (en-tête, navigation, pied de page, grilles) */
+.site-header {
+  /* [[T05]] */
+}
+
+.site-nav {
+  /* [[T05]] */
+}
+
+.nav-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-footer {
+  /* [[T05]] */
+}
+
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: inline-block;
+  }
+}

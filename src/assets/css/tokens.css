@@ -1,0 +1,25 @@
+/* Design tokens — à compléter en T05 (inspiration bois, marqueterie, damier,
+   patrimoine). Ne pas implémenter de style final ici. */
+:root {
+  /* Couleurs */
+  --color-bg: [[T05]];
+  --color-text: [[T05]];
+  --color-accent: [[T05]];
+
+  /* Typographies */
+  --font-display: [[T05]];
+  --font-body: [[T05]];
+
+  /* Espacements */
+  --space-1: [[T05]];
+  --space-2: [[T05]];
+  --space-3: [[T05]];
+
+  /* Rayons, ombres, transitions */
+  --radius: [[T05]];
+  --shadow: [[T05]];
+  --transition: [[T05]];
+
+  /* Accessibilité */
+  --focus-ring: [[T05]];
+}

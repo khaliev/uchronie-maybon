@@ -1,0 +1,15 @@
+{
+  "items": [
+    { "label": "Accueil", "href": "/", "order": 0 },
+    { "label": "À propos", "href": "/a-propos/", "order": 1 },
+    { "label": "Savoir-faire", "href": "/savoir-faire/", "order": 2, "children": [
+      { "label": "Ébénisterie", "href": "/ebenisterie/" },
+      { "label": "Tabletterie", "href": "/tabletterie/" },
+      { "label": "Marqueterie & gainerie", "href": "/marqueterie-gainerie/" }
+    ]},
+    { "label": "Réalisations", "href": "/realisations/", "order": 3 },
+    { "label": "Professionnels", "href": "/professionnels/", "order": 4 },
+    { "label": "Contact", "href": "/contact/", "order": 5 },
+    { "label": "Rendez-vous", "href": "/rendez-vous/", "order": 6 }
+  ]
+}

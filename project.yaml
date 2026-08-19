@@ -1,0 +1,110 @@
+# Uchronie Maybon — configuration projet
+# Ne pas inventer de donnée métier : placeholders + [[A_VERIFIER:...]] uniquement.
+
+project:
+  name: "Uchronie Maybon"
+  slug: "uchronie-maybon"
+  description: >
+    Refonte du site vitrine d'un artisan ébéniste / tabletteur / marqueteur /
+    gainier / designer produit. Haut de gamme, artisanal, contemporain avec
+    héritage historique.
+  status: "scaffolding"            # scaffolding → audit → contenu → build → qa → livraison
+  lang: "fr"
+  stack: "static"                  # HTML + CSS + JS natif, build Node.js simple
+  framework: "none"
+
+sources:
+  reminder: >
+    Avant toute rédaction, extraction ou implémentation métier, collecter et
+    croiser les données depuis les URLs listées dans docs/source-urls.md.
+  file: "docs/source-urls.md"
+
+quality:
+  lighthouse_performance: 95
+  lighthouse_accessibility: 95
+  lighthouse_seo: 95
+  lighthouse_best_practices: 95
+  responsive_min: "320px"
+  responsive_max: "4K"
+  hamburger_mobile_accessible: true
+  full_keyboard_navigation: true
+  prefers_reduced_motion: true
+  targets_file: "docs/quality-targets.md"
+
+content:
+  root: "src/content/"
+  pages_dir: "src/content/pages/"
+  partials_dir: "src/partials/"
+  assets_dir: "src/assets/"
+
+build:
+  output_dir: "dist/"
+  scripts:
+    validate: "scripts/validate-content.mjs"
+    build: "scripts/build.mjs"
+    check_links: "scripts/check-links.mjs"
+    serve: "scripts/serve.mjs"
+
+tasks:
+  prefix: "tasks/"
+  list:
+    - "T00-regles-anti-hallucination.md"
+    - "T01-audit-site-existant.md"
+    - "T02-recuperation-assets.md"
+    - "T03-extraction-contenu.md"
+    - "T04-architecture-technique.md"
+    - "T05-design-system.md"
+    - "T06-build-et-templates.md"
+    - "T07-pages.md"
+    - "T08-interactions-js.md"
+    - "T09-reservation.md"
+    - "T10-seo-geo.md"
+    - "T11-qa-accessibilite-perf.md"
+    - "T12-livraison.md"
+
+docs:
+  state: "docs/state.json"
+  decisions: "docs/decisions.md"
+  client_todo: "docs/TODO-CLIENT.md"
+  brief: "docs/brief-client.md"
+
+  **
+
+  projet:
+  nom: Uchronie Maybon
+  source_url: "https://melodiemaybon.wixsite.com/uchronie-maybon"
+  domaine_final: "A_VERIFIER"
+  date_cadrage: "2026-08-19"
+
+identite:
+  artisane: Mélodie Maybon
+  marque: Uchronie Maybon
+  depuis: 2018
+  adresse_principale: "68 bis rue Ponsardin, 51100 Reims"
+  telephone: "06 21 32 40 59"
+  email: "melodie.maybon+contact@gmail.com"
+
+design:
+  concept: "Le geste ancien, le dessin contemporain"
+  palette:
+    bordeaux: "#681D2A"
+    champagne: "#C5A46D"
+    ivoire: "#F5F0E7"
+    noyer: "#49352A"
+    ebene: "#171411"
+  interdits: [steampunk, engrenages, fond-bois-integral, glassmorphism, carrousel-auto, doré-excessif]
+
+technique:
+  type: "statique multipage"
+  build: "scripts/build.mjs (Node >= 20, zéro dépendance npm)"
+  frameworks_interdits: [react, vue, svelte, astro, next, tailwind, bootstrap, gsap, jquery]
+
+reservation:
+  provider: "google agenda"        # calendly | google | external-link
+  url: "A_VERIFIER"
+  consent_requis: true
+
+seo:
+  cible_principale: ["ébéniste d'art Reims", "marqueterie contemporaine Reims", "tabletterie Reims", "coffret bois luxe sur mesure"]
+  zone: ["Reims", "Marne", "Grand Est", "Île-de-France"]
+  locales_artificielles: interdit

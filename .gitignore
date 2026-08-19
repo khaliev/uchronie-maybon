@@ -1,1 +1,6 @@
 .DS_Store
+node_modules/
+dist/*
+!dist/.gitkeep
+src/assets/images/optimized/*
+!src/assets/images/optimized/.gitkeep

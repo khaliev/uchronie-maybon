@@ -1,0 +1,22 @@
+{
+  "name": "Uchronie Maybon",
+  "lang": "fr",
+  "tagline": "[[A_VERIFIER:accroche du site]]",
+  "description": "[[A_VERIFIER:description officielle de l'atelier]]",
+  "contact": {
+    "address": "[[A_VERIFIER:adresse complète]]",
+    "city": "[[A_VERIFIER:ville]]",
+    "postal_code": "[[A_VERIFIER:code postal]]",
+    "phone": "[[A_VERIFIER:téléphone]]",
+    "email": "[[A_VERIFIER:email]]",
+    "hours": "[[A_VERIFIER:horaires]]"
+  },
+  "social": {
+    "instagram": "[[A_VERIFIER:url instagram]]",
+    "facebook": "[[A_VERIFIER:url facebook]]"
+  },
+  "links": {
+    "official_site": "https://www.uchronie-maybon.com/",
+    "shop": "https://uchronie-maybon.sumupstore.com/"
+  }
+}

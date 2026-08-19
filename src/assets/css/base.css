@@ -1,0 +1,49 @@
+/* Styles de base — à compléter en T05/T07 */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body, sans-serif);
+  color: var(--color-text, #111);
+  background: var(--color-bg, #fff);
+  line-height: 1.6;
+}
+
+/* Accessibilité */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+}
+
+.skip-link:focus {
+  left: 0;
+  z-index: 1000;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus-ring, currentColor);
+  outline-offset: 2px;
+}
+
+/* prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

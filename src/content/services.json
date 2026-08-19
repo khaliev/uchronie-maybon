@@ -1,0 +1,29 @@
+{
+  "intro": "[[A_VERIFIER:introduction des savoir-faire]]",
+  "services": [
+    {
+      "slug": "ebenisterie",
+      "title": "Ébénisterie",
+      "summary": "[[A_VERIFIER:résumé ébénisterie]]",
+      "details": "[[A_VERIFIER:détail à compléter]]"
+    },
+    {
+      "slug": "tabletterie",
+      "title": "Tabletterie",
+      "summary": "[[A_VERIFIER:résumé tabletterie]]",
+      "details": "[[A_VERIFIER:détail à compléter]]"
+    },
+    {
+      "slug": "marqueterie-gainerie",
+      "title": "Marqueterie & gainerie",
+      "summary": "[[A_VERIFIER:résumé marqueterie et gainerie]]",
+      "details": "[[A_VERIFIER:détail à compléter]]"
+    },
+    {
+      "slug": "design-produit",
+      "title": "Design produit",
+      "summary": "[[A_VERIFIER:résumé design produit]]",
+      "details": "[[A_VERIFIER:détail à compléter]]"
+    }
+  ]
+}

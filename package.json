@@ -1,0 +1,16 @@
+{
+  "name": "uchronie-maybon",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Refonte du site vitrine d'Uchronie Maybon — site statique HTML/CSS/JS natif, zéro framework.",
+  "type": "module",
+  "scripts": {
+    "validate": "node scripts/validate-content.mjs",
+    "build": "node scripts/build.mjs",
+    "check-links": "node scripts/check-links.mjs",
+    "serve": "node scripts/serve.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

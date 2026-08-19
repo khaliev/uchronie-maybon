@@ -1,0 +1,18 @@
+/* Composants réutilisables — à compléter en T05/T07
+   (boutons, cartes, galerie, formulaire, hamburger, modales) */
+.button {
+  /* [[T05]] */
+}
+
+.card {
+  /* [[T05]] */
+}
+
+.gallery {
+  /* [[T05]] */
+}
+
+.nav-toggle {
+  display: none;
+  /* menu hamburger accessible : aria-expanded, aria-controls (T08) */
+}
