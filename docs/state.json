@@ -2,7 +2,7 @@
   "project": "uchronie-maybon",
   "updated": "2026-08-20",
   "phase": "implementation",
-  "notes": "T07 livré : accueil complet (hero, savoir-faire, réalisations, atelier) avec 3 images intégrées depuis src/assets/images/originals/ ; build.mjs convertit toute image Markdown en <img src=/assets/images/originals/... loading=lazy width=800 height=600> (aucun ../ dans dist/), slug 'index' traité comme accueil ; navigation desktop en flex sans rupture (nowrap), masquée <768px ; head enrichi (OG, canonical, JSON-LD HomeGoodsStore) portant l'accueil à 201 lignes et 4 <img>. Build OK : 12 pages, validation 0 erreur, liens internes OK.",
+  "notes": "T07 livré : accueil complet (hero, savoir-faire, réalisations, atelier) avec 3 images intégrées depuis src/assets/images/originals/ ; build.mjs convertit toute image Markdown en <img src=/assets/images/originals/... loading=lazy width=800 height=600> (aucun ../ dans dist/), slug 'index' traité comme accueil ; navigation desktop en flex sans rupture (nowrap), masquée <768px ; head enrichi (OG, canonical, JSON-LD HomeGoodsStore) portant l'accueil à 201 lignes et 4 <img>. Correction urgente : renderMarkdown préserve désormais les blocs HTML (div/iframe...) avant l'échappement via des placeholders __HTML_BLOCK_n__, restitués en ligne propre (la carte OSM de /contact/ s'affiche comme un vrai iframe, plus de texte brut). Build OK : 12 pages, validation 0 erreur, liens internes OK.",
   "tasks": {
     "T00": "done",
     "T01": "done",

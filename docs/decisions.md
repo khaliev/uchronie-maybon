@@ -197,3 +197,20 @@ _(à remplir au fil des tâches)_
 - **Alternatives rejetées** : gonfler artificiellement la page par du contenu non sourcé (interdit), ajouter des sélecteurs `.main-nav` sans correspondance dans le HTML (CSS mort), enjoliveur HTML externe (dépendance).
 - **Conséquences** : dist/index.html = 201 lignes, 4 `<img>` ; T08 (menu déroulant, lightbox) et T10 (SEO avancé : JSON-LD plus riche, redirections) s'appuient sur ce socle ; le domaine `uchronie-maybon.fr` et la boutique SumUp restent à confirmer côté client.
 - **Statut** : actée
+
+### ADR-012 — HTML natif préservé dans les pages Markdown (correction)
+- **Date** : 2026-08-20
+- **Tâche** : T06 / T07 (correction urgente)
+- **Décision** : `renderMarkdown` dans `scripts/build.mjs` préserve désormais les blocs HTML
+  (paires ouverture/fermeture de même nom : `div`, `iframe`, `small`…) **avant** l'échappement
+  HTML, en les remplaçant par des placeholders `__HTML_BLOCK_n__`. Les placeholders sur leur
+  propre ligne sont restitués tels quels, hors balises `<p>`, dans le HTML final. Toute autre
+  conversion Markdown (images, liens, listes…) fonctionne en parallèle.
+- **Contexte** : le HTML brut de la carte OSM (`src/content/pages/contact.md`) était échappé
+  en `&lt;div&gt;…` par `escapeHtml(md)` et s'affichait en texte brut sur `/contact/`.
+- **Alternatives rejetées** : partial `src/partials/map-contact.html` + variable `{{map}}`
+  (choix client : fix générique dans le parser, le HTML reste dans le Markdown, utilisable
+  partout) ; utiliser une librairie Markdown (zéro dépendance imposée).
+- **Conséquences** : tout fichier `pages/*.md` peut désormais embarquer du HTML structurant
+  (encadrés, iframes) rendu correctement ; le contenu reste centralisé dans `src/content/`.
+- **Statut** : actée

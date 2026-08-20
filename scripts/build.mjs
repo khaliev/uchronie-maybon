@@ -120,7 +120,13 @@ function inline(text) {
 }
 
 function renderMarkdown(md) {
-  const source = escapeHtml(md).replace(
+  const htmlBlocks = [];
+  const preserved = md.replace(/<([a-z][a-z0-9]*)[^>]*>[\s\S]*?<\/\1\s*>/gi, (match) => {
+    const placeholder = `__HTML_BLOCK_${htmlBlocks.length}__`;
+    htmlBlocks.push(match);
+    return placeholder;
+  });
+  const source = escapeHtml(preserved).replace(
     PLACEHOLDER_RE,
     '<mark class="a-verifier" title="Donnée à vérifier">$1</mark>'
   );
@@ -151,6 +157,13 @@ function renderMarkdown(md) {
     }
 
     let m;
+    const htmlMatch = line.match(/^__HTML_BLOCK_(\d+)__$/);
+    if (htmlMatch) {
+      flushPara();
+      flushList();
+      out.push(htmlBlocks[Number(htmlMatch[1])]);
+      continue;
+    }
     if ((m = line.match(/^!\[([^\]]+)\]\(([^)]+)\)$/))) {
       flushPara();
       flushList();
