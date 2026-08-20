@@ -192,4 +192,32 @@
 
 .main-content {
   flex: 1 0 auto;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3rem 2rem;
+}
+
+.main-content > * {
+  max-width: 65ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.main-content h1,
+.main-content h2,
+.main-content h3 {
+  max-width: 100%; /* Les titres peuvent être plus larges */
+}
+
+.main-content img {
+  max-width: 100%;
+  width: auto;
+  display: block;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 4px;
+  box-shadow: 0 2px 12px rgba(104, 29, 42, 0.12);
 }
