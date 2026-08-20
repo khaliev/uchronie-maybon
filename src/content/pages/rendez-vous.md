@@ -8,4 +8,8 @@ description: Prenez rendez-vous avec l'atelier Uchronie Maybon pour discuter de 
 
 Vous avez un projet en tête ou souhaitez visiter mon atelier ? 
 
-N'hésitez pas à me contacter ou à réserver un créneau pour que nous puissions échanger de vive voix sur vos envies, votre budget et les réalisations possibles. 
+![Portrait de l'atelier](/assets/images/originals/copeaux-de-bois-atelier.jpg)
+
+## Autre question ?
+
+Pour toute demande qui ne nécessite pas de rendez-vous (question rapide, demande de tarif, partenariat), vous pouvez utiliser le [formulaire de contact](/contact/) ou nous appeler directement.

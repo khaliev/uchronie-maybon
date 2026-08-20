@@ -4,10 +4,16 @@ title: Contact
 description: Contactez Uchronie Maybon pour un projet sur-mesure, une restauration ou pour visiter l'atelier à Reims.
 ---
 
-# Contactez-moi
+## Contactez-moi
 
-Un projet sur-mesure ? Une restauration à effectuer ? Un concept de boîte ? 
-N'hésitez pas à me contacter par téléphone ou par e-mail. Vous êtes également les bienvenus pour me rendre visite directement à la boutique !
+Un projet sur-mesure ? Une restauration à effectuer ? Un concept de boîte ?
+
+N'hésitez pas à me contacter par [téléphone](tel:+33621324059) ou par [e-mail](mailto:melodie.maybon+contact@gmail.com). Vous êtes également les bienvenus pour me rendre visite directement à la boutique !
+
+**📞 Téléphone :** [06 21 32 40 59](tel:+33621324059)    
+**✉️ E-mail :** [melodie.maybon+contact@gmail.com](mailto:melodie.maybon+contact@gmail.com)  
+**📍 Adresse :** 68 bis rue Ponsardin, 51100 Reims    
+**🕒 Horaires :** Du mardi au vendredi de 11h à 18h, le samedi de 10h à 19h
 
 ## Nous trouver
 
@@ -31,3 +37,7 @@ N'hésitez pas à me contacter par téléphone ou par e-mail. Vous êtes égalem
     </a>
   </small>
 </div>
+
+## Préférez prendre rendez-vous ?
+
+Pour réserver un créneau dans l'agenda de l'atelier et échanger sur votre projet en visio ou sur place, rendez-vous sur la [page de prise de rendez-vous](/rendez-vous/).
