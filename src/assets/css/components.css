@@ -135,10 +135,15 @@
 .site-header .container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start; /* au lieu de space-between */
+  gap: 2rem; /* contrôle l’espace logo ↔ nav */
   padding: 1rem 2rem;
   max-width: 1400px;
   margin: 0 auto;
+}
+
+.main-nav {
+  margin-left: auto; /* garde la nav à droite, mais de façon plus douce */
 }
 
 .site-header .logo {
@@ -644,37 +649,3 @@
   transform: translateY(-2px);
 }
 
-/* ==========================================================================
-   CARTE & IFRAME
-   ========================================================================== */
-.map-container {
-  margin: 2rem 0;
-  border: 2px solid var(--color-champagne);
-  border-radius: 4px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(104, 29, 42, 0.15);
-}
-
-.map-container iframe {
-  display: block;
-  width: 100%;
-  border: none;
-}
-
-.map-container small {
-  display: block;
-  padding: 0.75rem;
-  background: var(--color-ivoire-dark);
-  text-align: center;
-}
-
-.map-container a {
-  color: var(--color-bordeaux);
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.map-container a:hover {
-  color: var(--color-champagne-dark);
-  text-decoration: underline;
-}
