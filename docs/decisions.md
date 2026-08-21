@@ -214,3 +214,17 @@ _(à remplir au fil des tâches)_
 - **Conséquences** : tout fichier `pages/*.md` peut désormais embarquer du HTML structurant
   (encadrés, iframes) rendu correctement ; le contenu reste centralisé dans `src/content/`.
 - **Statut** : actée
+
+### ADR-013 — Interactions JavaScript natives T08
+- **Date** : 2026-08-21
+- **Tâche** : T08
+- **Décision** :
+  - **Menu hamburger mobile** : bouton `<button id="nav-toggle">` sémantique avec `aria-expanded`, `aria-controls="primary-navigation"`, `aria-label` dynamique. La `<nav>` est masquée à `< 56.24rem` (≃ 899px) via `visibility:hidden; opacity:0` (panel plein écran bordeaux). JS ajoute `.is-open` pour l'ouvrir. Fermeture : Échap, clic extérieur, clic sur un lien de nav. Focus trap dans le menu ouvert (Tab/Shift+Tab). Scroll-lock via classe `html.nav-open`. Sans JS : nav reste masquée (fallback acceptable en cas de failure JS).
+  - **Galerie filtrable** : barre de `<button data-filter="...">` avec `aria-pressed`, grille `.gallery-grid` avec cartes `<article data-category="...">`. Filtrage côté client avec `hidden` attribute. Zone `aria-live="polite"` pour annoncer le nombre de résultats. Sans JS : toutes les cartes restent visibles (aucun `hidden` initial dans le HTML source).
+  - **Modules ES** : `main.js` → `navigation.js` + `gallery.js`. Type module avec defer implicite. Guard `DOMContentLoaded`. Pas d'erreur console si composant absent.
+  - **Catégories projets** : 4 catégories ajoutées dans `projects.json` à partir des descriptions de `inventaire-assets.csv` : tabletterie (5), marqueterie (3), gainerie (6), mobilier (3).
+  - **Animations** : `card-appear` 250ms + transitions 200ms. `prefers-reduced-motion: reduce` → pas d'animation dans tous les blocs concernés.
+- **Contexte** : T07 avait validé le layout desktop. T08 ajoute la couche JS interactive sans casser ce socle.
+- **Alternatives rejetées** : lightbox (trop complexe pour cette itération, non prioritaire) ; bibliothèque tierce (interdit par contraintes projet) ; animation GSAP (interdit).
+- **Conséquences** : JS < 5 Ko non compressé. Build OK. Validation 0 erreur. T09 peut commencer (SEO avancé / sitemap / pages manquantes).
+- **Statut** : actée

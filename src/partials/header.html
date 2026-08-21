@@ -1,11 +1,25 @@
 <header class="site-header">
   <div class="container">
     <a class="logo" href="/">
-      <img src="/assets/images/originals/logo-uchronie-maybon-complet.png" 
+      <img src="/assets/images/originals/logo-uchronie-maybon-complet.png"
            alt="Uchronie Maybon" width="60" height="60">
       <span>Uchronie Maybon</span>
     </a>
-    <nav class="main-nav">
+
+    <button
+      class="nav-toggle"
+      type="button"
+      id="nav-toggle"
+      aria-expanded="false"
+      aria-controls="primary-navigation"
+      aria-label="Ouvrir le menu"
+    >
+      <span class="nav-toggle__bar" aria-hidden="true"></span>
+      <span class="nav-toggle__bar" aria-hidden="true"></span>
+      <span class="nav-toggle__bar" aria-hidden="true"></span>
+    </button>
+
+    <nav id="primary-navigation" class="main-nav" aria-label="Navigation principale">
       <ul>
         <li><a href="/">Accueil</a></li>
         <li><a href="/a-propos/">À propos</a></li>
@@ -14,8 +28,10 @@
         <li><a href="/professionnels/">Professionnels</a></li>
         <li><a href="/contact/">Contact</a></li>
         <li><a href="/rendez-vous/">Rendez-vous</a></li>
-        <li><a href="https://uchronie-maybon.sumupstore.com/" target="_blank" 
-            rel="noopener">Boutique ↗</a></li>
+        <li>
+          <a href="https://uchronie-maybon.sumupstore.com/" target="_blank"
+             rel="noopener">Boutique ↗</a>
+        </li>
       </ul>
     </nav>
   </div>
