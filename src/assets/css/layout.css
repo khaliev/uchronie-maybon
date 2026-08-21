@@ -204,6 +204,22 @@
   margin-right: auto;
 }
 
+/* ==========================================================================
+   Galerie réalisations : grille et filtres hors contrainte 65ch
+   ========================================================================== */
+
+.main-content .gallery-filters,
+.main-content .gallery-grid {
+  max-width: none;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.main-content:has(.gallery-grid) {
+  max-width: var(--container-max-width, 75rem);
+}
+
 .main-content h1,
 .main-content h2,
 .main-content h3 {

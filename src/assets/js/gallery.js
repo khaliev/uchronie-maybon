@@ -24,18 +24,33 @@ export function initGallery() {
 
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  // Normalisation : slugs kebab-case minuscules, multi-categories possibles
+  // (ex. data-category="marqueterie gainerie")
+  const cardCategories = new Map(
+    cards.map((card) => [
+      card,
+      (card.dataset.category || '')
+        .toLowerCase()
+        .trim()
+        .split(/\s+/)
+        .filter(Boolean),
+    ])
+  );
+
   function setFilter(activeFilter) {
+    const filter = String(activeFilter || 'toutes').toLowerCase().trim();
+
     // Met a jour aria-pressed sur tous les boutons
     buttons.forEach((btn) => {
-      const isActive = btn.dataset.filter === activeFilter;
+      const isActive = btn.dataset.filter.toLowerCase().trim() === filter;
       btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
     });
 
     // Filtre les cartes
     let visible = 0;
     cards.forEach((card) => {
-      const cat = card.dataset.category || '';
-      const show = activeFilter === 'toutes' || cat === activeFilter;
+      const cats = cardCategories.get(card);
+      const show = filter === 'toutes' || cats.includes(filter);
 
       if (show) {
         card.removeAttribute('hidden');
@@ -52,12 +67,13 @@ export function initGallery() {
       }
     });
 
-    // Annonce aux lecteurs d'ecran
+    // Annonce aux lecteurs d'ecran (feedback meme si aucun resultat)
     if (status) {
-      const label = visible === 1
-        ? '1 realisation affichee'
-        : `${visible} realisations affichees`;
-      status.textContent = label;
+      status.textContent = visible === 0
+        ? 'Aucune realisation dans cette categorie'
+        : visible === 1
+          ? '1 realisation affichee'
+          : `${visible} realisations affichees`;
     }
   }
 

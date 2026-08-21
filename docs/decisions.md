@@ -228,3 +228,32 @@ _(à remplir au fil des tâches)_
 - **Alternatives rejetées** : lightbox (trop complexe pour cette itération, non prioritaire) ; bibliothèque tierce (interdit par contraintes projet) ; animation GSAP (interdit).
 - **Conséquences** : JS < 5 Ko non compressé. Build OK. Validation 0 erreur. T09 peut commencer (SEO avancé / sitemap / pages manquantes).
 - **Statut** : actée
+
+### ADR-014 — Correction galerie /realisations/ (artefacts HTML + filtres morts)
+- **Date** : 2026-08-21
+- **Tâche** : T08 (correctif)
+- **Décision** :
+  - **Cause racine unique** : la regex de préservation HTML de `renderMarkdown`
+    (`<tag>[\s\S]*?</tag>`, paresseuse sans équilibrage) fermait chaque bloc HTML à la
+    PREMIÈRE balise fermante rencontrée. Sur realisations.md : `<div id="gallery-controls">`
+    s'arrêtait au `</div>` interne → le vrai `</div>` devenait orphelin (affiché en texte) ;
+    `<div class="gallery-grid">` s'arrêtait dans la carte 1 → son `</article>` fuyait en texte
+    et l'article resté ouvert **imbriquait les 15 cartes suivantes dedans**. D'où les filtres
+    Marqueterie/Gainerie/Mobilier « morts » (masquer la carte 1 tabletterie masquait tout),
+    alors que les slugs data-category/data-filter étaient déjà cohérents. Aucun mismatch de
+    catégories : convention conservée (toutes/tabletterie/marqueterie/gainerie/mobilier).
+  - **Fix build** : nouvelle fonction `preserveHtmlBlocks` (build.mjs) avec comptage de
+    profondeur par nom de balise, gestion des void tags et balises auto-fermantes ; balise
+    jamais fermée traitée comme texte.
+  - **Fix CSS** : `.main-content .gallery-filters/.gallery-grid` exemptés de la contrainte
+    `max-width:65ch` ; `.main-content:has(.gallery-grid)` élargi au conteneur 75rem ;
+    `.gallery-grid .project-card__image` neutralise `.main-content img` (marges/ombre/radius,
+    spécificité 0,2,0 > 0,1,1) ; grille `minmax(min(260px,100%),1fr)` + gap 1.5rem.
+  - **Fix JS** (gallery.js) : normalisation toLowerCase/trim, support multi-catégories
+    (data-category="a b" → split + includes), message « Aucune réalisation » si 0 résultat.
+- **Alternatives rejetées** : recatégorisation des projets (inutile, données déjà correctes) ;
+  déplacer la galerie hors du Markdown vers un template dédié (le fix générique du parser
+  profite à toutes les pages).
+- **Conséquences** : HTML dist équilibré (28 div, 16 article), 0 artefact texte. Build OK,
+  validation 0 erreur, check-links OK.
+- **Statut** : actée

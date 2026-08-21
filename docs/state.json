@@ -2,7 +2,7 @@
   "project": "uchronie-maybon",
   "updated": "2026-08-21",
   "phase": "implementation",
-  "notes": "T08 livré : menu hamburger mobile accessible (button#nav-toggle, aria-expanded, focus trap, Echap, scroll-lock) ; galerie filtrable /realisations/ (16 cartes data-category, filtres aria-pressed, aria-live) ; modules ES natifs navigation.js + gallery.js + main.js < 5 Ko ; CSS mobile panel bordeaux plein ecran, prefers-reduced-motion respecte ; categories ajoutees dans projects.json (tabletterie/marqueterie/gainerie/mobilier). Build OK : 12 pages. Validation 0 erreur. Lightbox non implementee (complexite non prioritaire, notee en ADR-013).",
+  "notes": "T08 + correctif ADR-014 : galerie /realisations/ reparee (parser HTML build.mjs avec equilibrage de balises, fin des artefacts </div>/</article> en texte et de l'imbrication parasite des cartes) ; filtres toutes/tabletterie/marqueterie/gainerie/mobilier tous fonctionnels (slugs deja coherents, aucune recategorisation necessaire) ; grille hors contrainte 65ch, cartes neutralisees vs .main-content img ; gallery.js normalise (multi-categories, message vide). Build OK : 12 pages. Validation 0 erreur. check-links OK. Lightbox non implementee (ADR-013).",
   "tasks": {
     "T00": "done",
     "T01": "done",
