@@ -1,8 +1,8 @@
 {
   "project": "uchronie-maybon",
-  "updated": "2026-08-21",
-  "phase": "implementation",
-  "notes": "T08 + correctif ADR-014 : galerie /realisations/ reparee (parser HTML build.mjs avec equilibrage de balises, fin des artefacts </div>/</article> en texte et de l'imbrication parasite des cartes) ; filtres toutes/tabletterie/marqueterie/gainerie/mobilier tous fonctionnels (slugs deja coherents, aucune recategorisation necessaire) ; grille hors contrainte 65ch, cartes neutralisees vs .main-content img ; gallery.js normalise (multi-categories, message vide). Build OK : 12 pages. Validation 0 erreur. check-links OK. Lightbox non implementee (ADR-013).",
+  "updated": "2026-08-22",
+  "phase": "T10-in-progress",
+  "notes": "T09 livre : reservation /rendez-vous/ a 3 etats pilotée par config site.json booking {provider,url,enabled,requireConsent} -> build.mjs calcule le mode et l'injecte en data-attributes ; mode demo actif (aucune URL inventee, aucun tiers charge) avec badge 'a activer' + CTA tel/mail/contact ; mode google = consentement puis iframe au clic + lien nouvel onglet ; mode external-link = bouton sortant seul. booking.js implemente (importe dans main.js), stubs consent.js et partials/booking-consent.html supprimes. renderTemplate desormais applique aux corps de pages. Build OK : 12 pages, validation 0 erreur, check-links OK. ADR-015.",
   "tasks": {
     "T00": "done",
     "T01": "done",
@@ -13,11 +13,11 @@
     "T06": "done",
     "T07": "done",
     "T08": "done",
-    "T09": "pending",
+    "T09": "done",
     "T10": "pending",
     "T11": "pending",
     "T12": "pending"
   },
-  "current_task": "T09",
+  "current_task": "T10",
   "blocks": []
 }

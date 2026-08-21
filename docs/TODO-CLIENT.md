@@ -19,8 +19,14 @@
 
 ### src/content/site.json
 - [ ] `[[A_VERIFIER:domaine final]]` — links.official_site : domaine officiel
-- [ ] `[[A_VERIFIER:url de réservation]]` — links.booking : url de réservation
+- [ ] `[[A_VERIFIER:url de réservation]]` — booking.url : **URL publique exacte de l'agenda Google Calendar** (ou lien externe si autre outil). Tant qu'elle n'est pas fournie, la page /rendez-vous/ reste en mode démo (`booking.enabled` = false).
 - [ ] `links.boutique` — URL de la boutique SumUp (active constatée en T01, à confirmer)
+
+### Réservation — paramètres à confirmer (T09)
+- [ ] Type(s) de rendez-vous à proposer dans l'agenda (premier échange projet, visite d'atelier, suivi de chantier…)
+- [ ] Durée d'un créneau à confirmer
+- [ ] Délai minimum entre la réservation et le créneau à confirmer
+- [ ] Texte de consentement RGPD définitif (le libellé actuel est rédigé pour la démo)
 
 ### Pages légales (créées en T06, contenus à valider)
 - [ ] `src/content/pages/mentions-legales.md` — données d'identification légales (SIRET, SIREN, forme juridique), hébergeur, propriété intellectuelle

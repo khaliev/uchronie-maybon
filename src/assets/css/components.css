@@ -925,3 +925,112 @@ html.nav-open {
   margin: 0;
   line-height: 1.4;
 }
+
+/* ==========================================================================
+   RÉSERVATION (/rendez-vous/) — T09
+   Trois états : démo (.booking-demo), consentement Google (.booking-consent-box
+   + .booking-embed), lien externe (.booking-external). Fallback permanent :
+   .booking-fallback (téléphone / e-mail / contact).
+   ========================================================================== */
+
+.booking {
+  margin-block: var(--space-lg);
+}
+
+.booking [hidden] {
+  display: none !important;
+}
+
+/* Cartes d'état : démo / consentement / lien externe */
+.booking-demo,
+.booking-consent-box,
+.booking-external {
+  border: 1px solid var(--color-champagne);
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg-card);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-lg);
+}
+
+.booking-demo h3,
+.booking-consent-box h3,
+.booking-external h3 {
+  margin-block-start: var(--space-sm);
+}
+
+/* Badge « Réservation en ligne à activer » (mode démo) */
+.booking-demo__badge {
+  display: inline-block;
+  margin: 0;
+  padding: 0.25rem 0.85rem;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--letter-spacing-caps);
+  text-transform: uppercase;
+  color: var(--color-bordeaux);
+  border: 1px solid currentColor;
+  border-radius: var(--radius-full);
+  background-color: var(--color-bordeaux-subtle);
+}
+
+/* Groupe de boutons (CTA téléphone / e-mail / contact, etc.) */
+.booking-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-block-start: var(--space-md);
+}
+
+.booking-actions .btn[aria-disabled="true"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Conteneur de l'iframe Google Agenda (injectée après consentement) */
+.booking-embed {
+  margin-block-start: var(--space-md);
+  outline: none;
+}
+
+.booking-embed:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.booking-embed iframe {
+  display: block;
+  width: 100%;
+  min-height: 600px;
+  border: 1px solid var(--color-ivoire-muted);
+  border-radius: var(--radius-md);
+  background-color: #ffffff;
+}
+
+/* Lien de secours sous l'iframe */
+.booking-embed__fallback {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  margin-block: var(--space-sm) 0;
+}
+
+/* Fallback permanent : toujours accessible, quel que soit l'état */
+.booking-fallback {
+  margin-block-start: var(--space-xl);
+  padding-block-start: var(--space-lg);
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.booking-fallback p {
+  color: var(--color-text-muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .booking-actions .btn,
+  .booking-embed,
+  .booking-demo,
+  .booking-consent-box,
+  .booking-external {
+    transition: none;
+    animation: none;
+  }
+}

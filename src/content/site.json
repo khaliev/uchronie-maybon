@@ -19,24 +19,29 @@
     "instagram": { "value": "https://www.instagram.com/uchroniemaybon/", "source": "https://melodiemaybon.wixsite.com/uchronie-maybon", "verified": true },
     "facebook": { "value": "https://www.facebook.com/uchroniemaybon", "source": "https://melodiemaybon.wixsite.com/uchronie-maybon", "verified": true }
   },
-"links": {
-  "official_site": { 
-    "value": "https://www.uchronie-maybon.fr", 
-    "source": "décision provisoire pour la démo", 
-    "verified": false,
-    "note": "À confirmer avec la cliente — uchronie-maybon.com est NXDOMAIN"
+  "links": {
+    "official_site": { 
+      "value": "https://www.uchronie-maybon.fr", 
+      "source": "décision provisoire pour la démo", 
+      "verified": false,
+      "note": "À confirmer avec la cliente — uchronie-maybon.com est NXDOMAIN"
+    },
+    "boutique": { 
+      "value": "https://uchronie-maybon.sumupstore.com/", 
+      "source": "https://uchronie-maybon.sumupstore.com/", 
+      "verified": false,
+      "note": "Boutique SumUp active constatée en T01 ; URL officielle à confirmer (cf. TODO-CLIENT)"
+    }
   },
-  "booking": { 
-    "value": "BOOKING_URL_PLACEHOLDER", 
-    "source": "sera configuré si acceptation du projet", 
-    "verified": false,
-    "note": "Google Calendar à configurer par la cliente"
-  },
-  "boutique": { 
-    "value": "https://uchronie-maybon.sumupstore.com/", 
-    "source": "https://uchronie-maybon.sumupstore.com/", 
-    "verified": false,
-    "note": "Boutique SumUp active constatée en T01 ; URL officielle à confirmer (cf. TODO-CLIENT)"
+  "booking": {
+    "_meta": {
+      "source": "ADR-003 (Google Calendar retenu) ; URL non communiquée par la cliente",
+      "verified": false
+    },
+    "provider": { "value": "google", "source": "docs/decisions.md ADR-003", "verified": true, "note": "google | external-link" },
+    "url": { "value": "[[A_VERIFIER:url de réservation]]", "source": "à fournir par la cliente", "verified": false, "note": "URL publique Google Calendar (ou lien externe si provider=external-link)" },
+    "enabled": false,
+    "requireConsent": true,
+    "note": "enabled=false OU url placeholder → mode démo (aucun tiers chargé). enabled=true + url réelle → intégration avec consentement (google) ou lien simple (external-link)."
   }
-}
 }

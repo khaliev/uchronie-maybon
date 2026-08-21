@@ -257,3 +257,37 @@ _(à remplir au fil des tâches)_
 - **Conséquences** : HTML dist équilibré (28 div, 16 article), 0 artefact texte. Build OK,
   validation 0 erreur, check-links OK.
 - **Statut** : actée
+
+### ADR-015 — Réservation /rendez-vous/ : système à 3 états, Google Calendar par défaut, mode démo sans URL (T09)
+- **Date** : 2026-08-22
+- **Tâche** : T09
+- **Décision** :
+  - Config centralisée dans `src/content/site.json` sous la clé `booking` :
+    `{ provider: "google" | "external-link", url, enabled, requireConsent }`.
+    `build.mjs` calcule un mode injecté en data-attributes sur `/rendez-vous/` :
+    `demo` (enabled=false ou url absente/placeholder — cas livré), `google`
+    (consentement puis iframe), `external-link` (bouton sortant seul).
+  - Aucune URL inventée : `booking.url = [[A_VERIFIER:url de réservation]]`,
+    tracée dans TODO-CLIENT ; en mode démo le build n'écrit aucune URL dans le HTML.
+  - Composant implémenté comme bloc HTML dans `rendez-vous.md` (pattern ADR-012),
+    piloté par `src/assets/js/booking.js` importé depuis `main.js`. L'iframe Google
+    n'est créée qu'au clic sur « Afficher l'agenda » ; liens de secours
+    « Ouvrir dans un nouvel onglet » ; fallback permanent téléphone/e-mail/contact.
+  - Fichiers supprimés : stubs vides `consent.js` et `partials/booking-consent.html`
+    (logique de consentement fusionnée dans booking.js ; partial non injectable par
+    le build actuel, remplacé par le bloc Markdown).
+  - `renderTemplate` est désormais appliqué au corps des pages (permet
+    `{{site.phone_tel}}`, `{{site.email}}`, `{{booking.*}}` dans les contenus).
+- **Contexte** : démo de prospection — l'URL réelle de l'agenda de la cliente est
+  inconnue (ADR-003 a retenu Google Calendar). Le système doit être crédible sans
+  faux agenda ni faux créneaux, et branchable plus tard en changeant uniquement
+  `site.json`.
+- **Alternatives rejetées** :
+  - Partial dédié + injection build par page : nécessiterait d'étendre le moteur
+    pour les partials de contenu ; le bloc Markdown suffit et reste éditable.
+  - Calendly : contredit ADR-003 (dépendance widget externe).
+  - Conserver les stubs `consent.js`/`booking-consent.html` : code mort trompeur.
+- **Conséquences** : activation future = passer `enabled: true` + URL réelle dans
+  `site.json`, aucun changement de code. Type/durée/délai des RDV à confirmer
+  (TODO-CLIENT). En mode démo, aucun tiers n'est chargé (vérifiable dans dist).
+- **Statut** : actée

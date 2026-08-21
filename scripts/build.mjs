@@ -119,13 +119,60 @@ function inline(text) {
     .replace(/\*([^*]+)\*/g, '<em>$1</em>');
 }
 
+const VOID_TAGS = new Set(['area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'param', 'source', 'track', 'wbr']);
+
+/**
+ * Extrait les blocs HTML du Markdown en respectant l'imbrication :
+ * un bloc <div>…</div> n'est clos qu'à la balise fermante APPARIÉE
+ * (comptage de profondeur), pas à la première rencontrée. Sans cela,
+ * des balises fermantes orphelines fuient dans le texte (bug T08).
+ */
+function preserveHtmlBlocks(md) {
+  const blocks = [];
+  let out = '';
+  let i = 0;
+  while (i < md.length) {
+    const lt = md.indexOf('<', i);
+    if (lt === -1) {
+      out += md.slice(i);
+      break;
+    }
+    out += md.slice(i, lt);
+    const open = md.slice(lt).match(/^<([a-zA-Z][a-zA-Z0-9-]*)(\s[^<>]*)?\/?>/);
+    if (!open || VOID_TAGS.has(open[1].toLowerCase()) || /\/>$/.test(open[0])) {
+      // Pas une balise ouvrante appariable : on garde le caractère tel quel
+      out += md[lt];
+      i = lt + 1;
+      continue;
+    }
+    const tag = open[1];
+    const re = new RegExp(`<(/?)${tag}(?=\\s|/|>)[^<>]*>`, 'gi');
+    re.lastIndex = lt + open[0].length;
+    let depth = 1;
+    let end = -1;
+    let m;
+    while ((m = re.exec(md))) {
+      depth += m[1] === '/' ? -1 : 1;
+      if (depth === 0) {
+        end = re.lastIndex;
+        break;
+      }
+    }
+    if (end === -1) {
+      // Balise jamais fermée : on la traite comme du texte
+      out += md[lt];
+      i = lt + 1;
+      continue;
+    }
+    blocks.push(md.slice(lt, end));
+    out += `\n\n__HTML_BLOCK_${blocks.length - 1}__\n\n`;
+    i = end;
+  }
+  return { preserved: out, htmlBlocks: blocks };
+}
+
 function renderMarkdown(md) {
-  const htmlBlocks = [];
-  const preserved = md.replace(/<([a-z][a-z0-9]*)[^>]*>[\s\S]*?<\/\1\s*>/gi, (match) => {
-    const placeholder = `__HTML_BLOCK_${htmlBlocks.length}__`;
-    htmlBlocks.push(match);
-    return placeholder;
-  });
+  const { preserved, htmlBlocks } = preserveHtmlBlocks(md);
   const source = escapeHtml(preserved).replace(
     PLACEHOLDER_RE,
     '<mark class="a-verifier" title="Donnée à vérifier">$1</mark>'
@@ -158,7 +205,7 @@ function renderMarkdown(md) {
 
     let m;
     const htmlMatch = line.match(/^__HTML_BLOCK_(\d+)__$/);
-    if (htmlMatch) {
+    if (htmlMatch && htmlBlocks[Number(htmlMatch[1])] !== undefined) {
       flushPara();
       flushList();
       out.push(htmlBlocks[Number(htmlMatch[1])]);
@@ -330,8 +377,24 @@ const siteVars = {
   'site.instagram': flat['social.instagram'],
   'site.facebook': flat['social.facebook'],
   'site.boutique': flat['links.boutique'],
-  'site.booking': flat['links.booking'],
   'site.official_site': flat['links.official_site'],
+};
+
+/* --- Config réservation (T09) --------------------------------------- */
+/* Mode démo si enabled=false ou URL absente/placeholder : aucun tiers   */
+/* n'est chargé et la page affiche les CTA téléphone / e-mail.          */
+const bookingCfg = site.booking || {};
+const rawBookingUrl = String(flat['booking.url'] || '');
+const bookingUrlIsReal = rawBookingUrl !== '' && !/\[\[A_VERIFIER|PLACEHOLDER/.test(rawBookingUrl);
+const bookingProvider = String(flat['booking.provider'] || 'google');
+let bookingMode = 'demo';
+if (bookingCfg.enabled === true && bookingUrlIsReal) {
+  bookingMode = bookingProvider === 'external-link' ? 'external-link' : 'google';
+}
+const bookingVars = {
+  'booking.mode': bookingMode,
+  'booking.provider': bookingProvider,
+  'booking.url': bookingMode === 'demo' ? '' : rawBookingUrl,
 };
 
 const boutiqueUrl = siteVars['site.boutique'] || '';
@@ -355,11 +418,11 @@ for (const file of pageFiles) {
 
   const navHtml = buildNavigation(nav, boutiqueUrl, slug);
   const contentHtml = renderMarkdown(body);
-  const main = `<main id="main" class="main-content"><div class="container">\n${contentHtml}\n</div></main>`;
 
   const path = isHomeSlug(slug) ? '/' : `/${slug}/`;
   const vars = {
     ...siteVars,
+    ...bookingVars,
     'site.url': baseUrl,
     'site.og_image': `${baseUrl}${ogImage}`,
     'page.title': title,
@@ -369,6 +432,8 @@ for (const file of pageFiles) {
     'nav-desktop': navHtml.desktop,
     'nav-mobile': navHtml.mobile,
   };
+
+  const main = `<main id="main" class="main-content"><div class="container">\n${renderTemplate(contentHtml, vars)}\n</div></main>`;
 
   const document = [
     renderTemplate(partials.head, vars),

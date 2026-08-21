@@ -9,10 +9,12 @@
 
 import { initNavigation } from './navigation.js';
 import { initGallery } from './gallery.js';
+import { initBooking } from './booking.js';
 
 function init() {
   initNavigation();
   initGallery();
+  initBooking();
 }
 
 if (document.readyState === 'loading') {
