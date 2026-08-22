@@ -1,8 +1,8 @@
 {
   "project": "uchronie-maybon",
   "updated": "2026-08-22",
-  "phase": "T10-in-progress",
-  "notes": "T09 livre : reservation /rendez-vous/ a 3 etats pilotée par config site.json booking {provider,url,enabled,requireConsent} -> build.mjs calcule le mode et l'injecte en data-attributes ; mode demo actif (aucune URL inventee, aucun tiers charge) avec badge 'a activer' + CTA tel/mail/contact ; mode google = consentement puis iframe au clic + lien nouvel onglet ; mode external-link = bouton sortant seul. booking.js implemente (importe dans main.js), stubs consent.js et partials/booking-consent.html supprimes. renderTemplate desormais applique aux corps de pages. Build OK : 12 pages, validation 0 erreur, check-links OK. ADR-015.",
+  "phase": "T11-in-progress",
+  "notes": "T10 livre : SEO/GEO complet. Titles + meta descriptions uniques sur les 12 pages (dans le frontmatter, {{page.title}} sans suffixe). JSON-LD genere par build.mjs via {{page.jsonld}} : WebSite + LocalBusiness (founder Person) sur accueil, BreadcrumbList sur les autres ; champs limites aux valeurs verifiees de site.json (SIRET, geo, reviews, booking URL omis). Canonical + Open Graph partout, sitemap.xml 12 URLs (loc accueil avec slash), robots.txt propre. Maillage interne renforce (savoir-faire structure en H2 par metier, liens croises metiers/realisations/RDV/contact), H1 unique restaure sur /contact/. Audit dist : 0 doublon, 0 var non resolue. Build OK, validation OK, check-links OK. ADR-016.",
   "tasks": {
     "T00": "done",
     "T01": "done",
@@ -14,10 +14,10 @@
     "T07": "done",
     "T08": "done",
     "T09": "done",
-    "T10": "pending",
+    "T10": "done",
     "T11": "pending",
     "T12": "pending"
   },
-  "current_task": "T10",
+  "current_task": "T11",
   "blocks": []
 }

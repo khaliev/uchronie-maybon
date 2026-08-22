@@ -1,7 +1,7 @@
 ---
 slug: realisations
-title: Réalisations
-description: Galerie des réalisations d'Uchronie Maybon — pièces uniques en bois et cuir, tabletterie, marqueterie, gainerie et mobilier, conçues et fabriquées à Reims.
+title: "Réalisations : pièces uniques en bois et cuir | Uchronie Maybon"
+description: "Galerie des réalisations d'Uchronie Maybon : coffrets, présentoirs, marqueteries et mobilier en bois et cuir, des pièces uniques conçues et fabriquées à Reims."
 ---
 
 # Réalisations
@@ -185,3 +185,7 @@ Découvrez quelques-unes de mes créations, des modèles uniques et de caractèr
   </article>
 
 </div>
+
+## Derrière chaque pièce
+
+Ces créations mettent en œuvre les [savoir-faire de l'atelier](/savoir-faire/) : [tabletterie](/tabletterie/), [marqueterie et gainerie](/marqueterie-gainerie/) ou [ébénisterie](/ebenisterie/). Vous avez une idée similaire en tête ? [Prenez rendez-vous](/rendez-vous/) pour la concrétiser, ou découvrez les [projets pour les professionnels](/professionnels/).

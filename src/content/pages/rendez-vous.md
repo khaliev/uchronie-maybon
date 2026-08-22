@@ -1,7 +1,7 @@
 ---
 slug: rendez-vous
-title: Rendez-vous
-description: Prenez rendez-vous avec l'atelier Uchronie Maybon à Reims pour échanger sur votre projet sur-mesure en ébénisterie, tabletterie ou marqueterie.
+title: "Prendre rendez-vous | Atelier Uchronie Maybon à Reims"
+description: "Prenez rendez-vous avec l'atelier Uchronie Maybon à Reims pour présenter votre projet sur mesure en ébénisterie, tabletterie ou marqueterie."
 ---
 
 # Rendez-vous

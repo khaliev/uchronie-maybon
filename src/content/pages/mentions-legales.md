@@ -1,7 +1,7 @@
 ---
 slug: mentions-legales
-title: Mentions légales
-description: Mentions légales du site d'Uchronie Maybon, ébénisterie d'art à Reims.
+title: "Mentions légales | Uchronie Maybon"
+description: "Mentions légales du site d'Uchronie Maybon, atelier d'ébénisterie d'art à Reims : éditeur, contact et informations légales."
 ---
 
 # Mentions légales

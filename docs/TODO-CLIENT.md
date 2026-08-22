@@ -28,6 +28,10 @@
 - [ ] Délai minimum entre la réservation et le créneau à confirmer
 - [ ] Texte de consentement RGPD définitif (le libellé actuel est rédigé pour la démo)
 
+### SEO (T10)
+- [ ] **DOMAINE CANONICAL/SITEMAP** : les canonical, Open Graph, JSON-LD et sitemap utilisent le domaine provisoire `https://www.uchronie-maybon.fr` (valeur centralisée `site.json` → `links.official_site`, `verified: false`). Si un autre domaine est retenu, changer cette seule valeur et relancer le build.
+- [ ] **IMAGE OPEN GRAPH** : l'og:image actuelle est la photo de collection `collection-arlequin-multicolore.jpg` ; une image sociale dédiée (1200×630) reste à créer si souhaité.
+
 ### Pages légales (créées en T06, contenus à valider)
 - [ ] `src/content/pages/mentions-legales.md` — données d'identification légales (SIRET, SIREN, forme juridique), hébergeur, propriété intellectuelle
 - [ ] `src/content/pages/politique-de-confidentialite.md` — politique, cookies, droits RGPD

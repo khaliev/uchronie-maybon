@@ -1,7 +1,7 @@
 ---
 slug: a-propos
-title: À propos
-description: Artisane d'art ébéniste à Reims. Tabletterie, mobilier et marqueterie de bois et cuir. Créations sur-mesure, petites restaurations et vente directe.
+title: "Mélodie Maybon, artisane ébéniste à Reims | À propos"
+description: "Qui est Mélodie Maybon ? Artisane ébéniste, tabletière et marqueteure à Reims depuis 2018 : parcours, formation, récompenses et créations sur mesure en bois et cuir."
 ---
 
 # Mélodie MAYBON
@@ -22,6 +22,8 @@ Fabriquant chaque pièce de A à Z, je mets un point d'honneur à me fournir en 
 - **Marqueterie** : dessins formés grâce à un assemblage de matériaux (bois, cuir, paille, etc.).
 - **Packaging de luxe** : transformation de l'existant ou création complète en bois et cuir synthétique, intégration de logos en marqueterie ou gravés.
 
+[Découvrir en détail les savoir-faire de l'atelier →](/savoir-faire/)
+
 ## Formation
 En faisant appel à moi, vous avez l'assurance de travailler avec une artisane forte de sept années d'études : trois ans en design produit et quatre ans en ébénisterie.
 
@@ -33,3 +35,7 @@ En faisant appel à moi, vous avez l'assurance de travailler avec une artisane f
 
 ## Petites anecdotes
 L'origine du métier de tabletier, à proprement parler, date du Moyen-Âge avec les tablettes à écrire, voire même du XIVe siècle avant J.-C. avec les tablettes en cire ayant cette même fonction ! Uchronie Maybon trouve son point de départ dans le métier de tabletière tel qu'il se pratiquait au début du XIXe siècle. C'était l'époque des grandes explorations, de la Révolution Industrielle et des grandes inventions, une période marquée notamment par l'Exposition Universelle de 1889 où fut érigée la Tour Eiffel.
+
+## Travailler ensemble
+
+Chaque projet commence par un échange : [prenez rendez-vous](/rendez-vous/) pour venir à la boutique-atelier de Reims, ou [contactez directement l'atelier](/contact/) pour présenter votre idée.

@@ -1,8 +1,10 @@
 ---
 slug: contact
-title: Contact
-description: Contactez Uchronie Maybon pour un projet sur-mesure, une restauration ou pour visiter l'atelier à Reims.
+title: "Contact : atelier d'ébénisterie à Reims | Uchronie Maybon"
+description: "Contactez l'atelier Uchronie Maybon à Reims par téléphone ou e-mail pour un projet sur mesure, une restauration ou une visite de la boutique-atelier."
 ---
+
+# Contact
 
 ## Contactez-moi
 
@@ -16,6 +18,8 @@ N'hésitez pas à me contacter par [téléphone](tel:+33621324059) ou par [e-mai
 **🕒 Horaires :** Du mardi au vendredi de 11h à 18h, le samedi de 10h à 19h
 
 ## Nous trouver
+
+La boutique-atelier se situe au 68 bis rue Ponsardin, à Reims, dans la Marne. Vous pouvez y découvrir les créations et échanger sur place sur votre projet.
 
 <div class="map-container">
   <iframe 

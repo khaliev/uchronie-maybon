@@ -1,7 +1,7 @@
 ---
 slug: tabletterie
-title: Tabletterie
-description: La tabletterie, un savoir-faire de niche pour la création de coffrets à bijoux et objets en bois sur-mesure.
+title: "Tabletterie : coffrets et objets en bois sur mesure"
+description: "Coffrets à bijoux, boîtes et étuis en bois sur mesure : découvrez la tabletterie d'art exercée par Uchronie Maybon, tabletière à Reims."
 ---
 
 # La tabletterie, un savoir-faire de niche
@@ -13,3 +13,9 @@ La tabletterie est une branche de l'ébénisterie qui consiste à fabriquer de p
 Je vous propose des pièces aussi fonctionnelles qu'agréables à l'œil, convaincue que le plaisir de l'utilisation passe également par l'esthétique. Qu'il s'agisse de coffrets à bijoux innovants ou de coffrets à champagne personnalisés, je conçois des pièces uniques et vous accompagne tout au long de vos projets.
 
 ![Coffret à tiroir avec marqueterie géométrique](/assets/images/originals/coffret-tiroir-marqueterie-geometrique.jpg)
+
+## En savoir plus
+
+Les coffrets associent souvent la [marqueterie et la gainerie](/marqueterie-gainerie/) à d'autres savoir-faire de l'atelier comme l'[ébénisterie](/ebenisterie/). Des exemples de coffrets et d'objets réalisés sont visibles dans les [réalisations](/realisations/).
+
+Pour imaginer votre coffret sur mesure, [prenez rendez-vous](/rendez-vous/) ou [contactez l'atelier](/contact/).

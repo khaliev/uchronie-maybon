@@ -291,3 +291,42 @@ _(à remplir au fil des tâches)_
   `site.json`, aucun changement de code. Type/durée/délai des RDV à confirmer
   (TODO-CLIENT). En mode démo, aucun tiers n'est chargé (vérifiable dans dist).
 - **Statut** : actée
+
+### ADR-016 — SEO/GEO T10 : JSON-LD généré par le build, titres complets dans le frontmatter
+- **Date** : 2026-08-22
+- **Tâche** : T10
+- **Décision** :
+  - Les données structurées ne sont plus codées en dur dans `head.html` :
+    `build.mjs` génère un JSON-LD **par page** injecté via la variable
+    `{{page.jsonld}}`. Accueil : `WebSite` + `LocalBusiness` (avec `founder`
+    Person Mélodie Maybon) ; autres pages : `BreadcrumbList` (Accueil > Page).
+  - Champs LocalBusiness limités aux valeurs vérifiées de `site.json` : nom,
+    description, url (domaine provisoire centralisé), image locale existante,
+    téléphone, e-mail, adresse (68 bis rue Ponsardin), horaires (sourcés Wix),
+    sameAs Instagram/Facebook, areaServed prudent (Reims/Marne/Grand Est).
+    **Volontairement omis** : SIRET, geo coords, priceRange, review/rating,
+    URL de réservation.
+  - Le `<title>` et l'`og:title` utilisent désormais `{{page.title}}` seul :
+    chaque page porte son titre complet et unique dans le frontmatter Markdown
+    (fini le suffixe « — Uchronie Maybon » qui doublait le nom sur l'accueil).
+  - Maillage interne renforcé par liens descriptifs : accueil → savoir-faire +
+    contact ; savoir-faire → 3 métiers + professionnels + réalisations + RDV ;
+    ebenisterie/tabletterie/marqueterie ↔ realisations ↔ rendez-vous/contact ;
+    a-propos → savoir-faire + contact/RDV ; professionnels → realisations +
+    contact + RDV ; contact ↔ RDV (existants conservés).
+  - GEO : paragraphes explicites « qui / quoi / où » ajoutés (accueil, a-propos,
+    contact), page savoir-faire structurée en H2 par métier (contenus repris de
+    `services.json`, rien d'inventé), H1 unique restauré sur `/contact/`.
+  - Sitemap : loc de l'accueil corrigée en `https://…/` (alignée sur le
+    canonical). robots.txt inchangé (déjà propre).
+- **Contexte** : T10 = SEO local + lisibilité pour moteurs génératifs, sans
+  invention de données (démo de prospection).
+- **Alternatives rejetées** : pages locales artificielles type `/ebeniste-tinqueux/`
+  (doorway pages, interdites par consigne) ; FAQ inventée (sonne faux) ;
+  Review/AggregateRating/Offer (données inexistantes ou non vérifiées) ;
+  Twitter Card dédiée par page (redondant avec OG pour cette étape).
+- **Conséquences** : audit automatique dist OK — 12 titles uniques (34–63 car.),
+  12 meta descriptions uniques (123–165 car.), 1 H1/page, canonical + OG partout,
+  JSON-LD parsé sans erreur, sitemap 12 URLs, aucune variable non résolue.
+  Le domaine `uchronie-maybon.fr` reste provisoire (TODO-CLIENT).
+- **Statut** : actée

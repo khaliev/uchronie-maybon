@@ -1,12 +1,14 @@
 ---
-title: "Ébénisterie d'art à Reims — Uchronie Maybon"
-description: "Mélodie Maybon, artisane ébéniste à Reims. Tabletterie, marqueterie et coffrets sur-mesure en bois et cuir. Création artisanale haut de gamme."
+title: "Ébénisterie d'art à Reims | Uchronie Maybon"
+description: "Mélodie Maybon, artisane ébéniste à Reims : tabletterie, marqueterie, gainerie et coffrets sur mesure en bois et cuir, pour professionnels et particuliers."
 slug: "index"
 ---
 
 # Le geste ancien, le dessin contemporain
 
 Mélodie Maybon imagine et fabrique des objets, coffrets et pièces de mobilier où les gestes historiques de l'ébénisterie rencontrent des lignes, matières et couleurs résolument contemporaines.
+
+L'atelier Uchronie Maybon est installé au 68 bis rue Ponsardin, à Reims (Marne). Chaque projet y est étudié, dessiné puis fabriqué à la main, du premier croquis à la pièce finie.
 
 ![Collection de coffrets Arlequin](/assets/images/originals/collection-arlequin-multicolore.jpg)
 
@@ -26,6 +28,8 @@ Conception de coffrets d'exception, boîtes à bijoux et étuis précieux allian
 Dessins géométriques minutieux et assemblage de bois, cuirs et matières nobles pour sublimer chaque création.
 [En savoir plus →](/marqueterie-gainerie/)
 
+[Découvrir tous les savoir-faire de l'atelier →](/savoir-faire/)
+
 ## Réalisations
 
 ![Coffret tiroir avec marqueterie géométrique](/assets/images/originals/coffret-tiroir-marqueterie-geometrique.jpg)
@@ -41,4 +45,4 @@ Travaillant dans sa boutique-atelier au 68 bis rue Ponsardin à Reims (Marne), M
 **Du mardi au vendredi** : 11h–18h  
 **Le samedi** : 10h–19h
 
-[Prendre rendez-vous →](/rendez-vous/)
+[Prendre rendez-vous →](/rendez-vous/) · [Contacter l'atelier →](/contact/)

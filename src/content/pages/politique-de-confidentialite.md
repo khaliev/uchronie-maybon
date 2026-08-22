@@ -1,7 +1,7 @@
 ---
 slug: politique-de-confidentialite
-title: Politique de confidentialité
-description: Politique de confidentialité du site d'Uchronie Maybon : données collectées, réservation et droits RGPD.
+title: "Politique de confidentialité | Uchronie Maybon"
+description: "Politique de confidentialité du site d'Uchronie Maybon : données collectées, réservation en ligne, cookies et exercice de vos droits RGPD."
 ---
 
 # Politique de confidentialité

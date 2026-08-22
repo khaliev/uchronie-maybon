@@ -259,6 +259,99 @@ function renderMarkdown(md) {
 }
 
 /* ------------------------------------------------------------------ */
+/* Données structurées JSON-LD (T10)                                    */
+/* Uniquement des valeurs vérifiées de site.json : pas de SIRET,        */
+/* pas de review/rating, pas de coordonnées geo, pas d'URL de booking.  */
+/* ------------------------------------------------------------------ */
+
+function jsonLdScript(data) {
+  return `<!-- Données structurées JSON-LD -->\n<script type="application/ld+json">\n${JSON.stringify(
+    data,
+    null,
+    2
+  )}\n</script>`;
+}
+
+function buildJsonLd({ slug, title, path }) {
+  const home = isHomeSlug(slug);
+  const pageUrl = `${baseUrl}${home ? '/' : path}`;
+  const blocks = [];
+
+  if (home) {
+    blocks.push({
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      '@id': `${baseUrl}/#website`,
+      name: 'Uchronie Maybon',
+      url: `${baseUrl}/`,
+      inLanguage: 'fr-FR',
+      publisher: { '@id': `${baseUrl}/#atelier` },
+    });
+    blocks.push({
+      '@context': 'https://schema.org',
+      '@type': 'LocalBusiness',
+      '@id': `${baseUrl}/#atelier`,
+      name: siteVars['site.name'],
+      description: siteVars['site.description'],
+      url: `${baseUrl}/`,
+      image: `${baseUrl}${ogImage}`,
+      telephone: `+33${String(siteVars['site.phone_tel']).replace(/^0/, '')}`,
+      email: siteVars['site.email'],
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: '68 bis rue Ponsardin',
+        postalCode: '51100',
+        addressLocality: 'Reims',
+        addressRegion: 'Grand Est',
+        addressCountry: 'FR',
+      },
+      areaServed: ['Reims', 'Marne', 'Grand Est'],
+      openingHoursSpecification: [
+        {
+          '@type': 'OpeningHoursSpecification',
+          dayOfWeek: ['Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+          opens: '11:00',
+          closes: '18:00',
+        },
+        {
+          '@type': 'OpeningHoursSpecification',
+          dayOfWeek: 'Saturday',
+          opens: '10:00',
+          closes: '19:00',
+        },
+      ],
+      sameAs: [siteVars['site.instagram'], siteVars['site.facebook']].filter(Boolean),
+      founder: {
+        '@type': 'Person',
+        name: siteVars['site.artisan'],
+        jobTitle: 'Artisane ébéniste, tabletière et marqueteure',
+      },
+    });
+  } else {
+    blocks.push({
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Accueil',
+          item: `${baseUrl}/`,
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: title,
+          item: pageUrl,
+        },
+      ],
+    });
+  }
+
+  return blocks.map(jsonLdScript).join('\n');
+}
+
+/* ------------------------------------------------------------------ */
 /* Navigation (desktop + mobile) depuis navigation.json                 */
 /* ------------------------------------------------------------------ */
 
@@ -429,6 +522,7 @@ for (const file of pageFiles) {
     'page.description': description,
     'page.slug': slug,
     'page.path': path,
+    'page.jsonld': buildJsonLd({ slug, title, path }),
     'nav-desktop': navHtml.desktop,
     'nav-mobile': navHtml.mobile,
   };
@@ -456,7 +550,7 @@ if (existsSync(ASSETS_DIR)) {
 
 /* --- Sitemap + robots --------------------------------------------- */
 const urls = builtPages
-  .map((p) => `  <url><loc>${baseUrl}${p.url === '/' ? '' : p.url}</loc><lastmod>${TODAY}</lastmod></url>`)
+  .map((p) => `  <url><loc>${baseUrl}${p.url}</loc><lastmod>${TODAY}</lastmod></url>`)
   .join('\n');
 
 write(
