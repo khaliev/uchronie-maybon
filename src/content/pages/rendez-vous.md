@@ -8,7 +8,7 @@ description: "Prenez rendez-vous avec l'atelier Uchronie Maybon à Reims pour pr
 
 Vous avez un projet en tête — un coffret, une boîte, un meuble, une marqueterie — ou vous souhaitez simplement visiter l'atelier et découvrir le travail du bois ? La meilleure façon d'en parler, c'est de se retrouver autour de l'établi.
 
-![Atelier Uchronie Maybon : copeaux de bois](/assets/images/originals/copeaux-de-bois-atelier.jpg)
+![Atelier Uchronie Maybon : copeaux de bois](/assets/images/cards/copeaux-de-bois-atelier.jpg?loading=eager)
 
 ## Le premier échange
 

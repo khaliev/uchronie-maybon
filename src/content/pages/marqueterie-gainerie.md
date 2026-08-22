@@ -12,7 +12,7 @@ La marqueterie consiste à former des dessins grâce à un assemblage méticuleu
 
 La gainerie est le travail du cuir et du cuir synthétique pour l'habillage d'objets, offrant des finitions élégantes et durables.
 
-![Détail de marqueterie géométrique en triangles](/assets/images/originals/detail-marqueterie-geometrique-bois.jpg)
+![Détail de marqueterie géométrique en triangles](/assets/images/cards/detail-marqueterie-geometrique-bois.jpg?loading=eager)
 
 ## Pour aller plus loin
 

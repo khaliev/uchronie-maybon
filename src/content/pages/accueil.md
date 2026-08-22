@@ -10,7 +10,7 @@ Mélodie Maybon imagine et fabrique des objets, coffrets et pièces de mobilier 
 
 L'atelier Uchronie Maybon est installé au 68 bis rue Ponsardin, à Reims (Marne). Chaque projet y est étudié, dessiné puis fabriqué à la main, du premier croquis à la pièce finie.
 
-![Collection de coffrets Arlequin](/assets/images/originals/collection-arlequin-multicolore.jpg)
+![Collection de coffrets Arlequin](/assets/images/cards/collection-arlequin-multicolore.jpg?loading=eager&fetchpriority=high)
 
 ## Savoir-faire artisanal à Reims
 
@@ -32,9 +32,9 @@ Dessins géométriques minutieux et assemblage de bois, cuirs et matières noble
 
 ## Réalisations
 
-![Coffret tiroir avec marqueterie géométrique](/assets/images/originals/coffret-tiroir-marqueterie-geometrique.jpg)
+![Coffret tiroir avec marqueterie géométrique](/assets/images/cards/coffret-tiroir-marqueterie-geometrique.jpg)
 
-![Table ronde avec marqueterie florale](/assets/images/originals/table-ronde-marqueterie-florale.jpg)
+![Table ronde avec marqueterie florale](/assets/images/cards/table-ronde-marqueterie-florale.jpg)
 
 [Découvrir toutes les créations →](/realisations/)
 

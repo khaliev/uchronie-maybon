@@ -14,6 +14,7 @@
 import { mkdirSync, readdirSync, readFileSync, writeFileSync, rmSync, existsSync, statSync, copyFileSync } from 'node:fs';
 import { join, extname, basename, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { imageSize } from './lib/image-size.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const SRC = join(ROOT, 'src');
@@ -75,13 +76,39 @@ function escapeHtml(text) {
  */
 function imageUrl(path) {
   const clean = path.trim().replace(/^["']|["']$/g, '');
-  if (clean.startsWith('/assets/images/originals/')) return clean;
+  if (clean.startsWith('/assets/images/originals/') || clean.startsWith('/assets/images/cards/')) {
+    return clean;
+  }
   const file = basename(clean.split(/[?#]/)[0]);
   return `/assets/images/originals/${file}`;
 }
 
+/**
+ * Rend une balise <img> depuis la syntaxe Markdown ![alt](chemin[?query]).
+ *
+ * Perf (correctif pré-T11) :
+ *   - width / height réels, lus au build depuis le fichier effectivement servi
+ *     (évite le CLS ; les faux 800x600 en dur sont supprimés) ;
+ *   - loading par défaut "lazy", decoding "async" ;
+ *   - une query string sur le chemin permet de surcharger les attributs de
+ *     chargement, ex. ?loading=eager&fetchpriority=high&decoding=async pour
+ *     l'image LCP au-dessus de la ligne de flottaison.
+ */
 function renderImage(alt, path) {
-  return `<img src="${imageUrl(path)}" alt="${alt}" loading="lazy" width="800" height="600">`;
+  const raw = path.trim();
+  const [pathPart, queryPart] = raw.split('?');
+  // escapeHtml a déjà tourné sur la source Markdown : & est arrivé ici en &amp;
+  const flags = new URLSearchParams((queryPart || '').replace(/&amp;/g, '&'));
+  const src = imageUrl(pathPart);
+  const subdir = src.startsWith('/assets/images/cards/') ? 'cards' : 'originals';
+  const file = basename(src);
+  const dims = imageSize(join(ASSETS_DIR, 'images', subdir, file));
+  const sizeAttrs = dims ? ` width="${dims.width}" height="${dims.height}"` : '';
+  const loading = ['eager', 'lazy'].includes(flags.get('loading'))
+    ? flags.get('loading')
+    : 'lazy';
+  const fetchPriority = flags.get('fetchpriority') === 'high' ? ' fetchpriority="high"' : '';
+  return `<img src="${src}" alt="${alt}"${sizeAttrs} loading="${loading}" decoding="async"${fetchPriority}>`;
 }
 
 /* ------------------------------------------------------------------ */

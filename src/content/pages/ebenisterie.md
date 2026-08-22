@@ -6,7 +6,7 @@ description: "Création, transformation et petite restauration de mobilier : l'�
 
 # Découvrez l'ébénisterie autrement
 
-![Table ronde avec marqueterie florale](/assets/images/originals/table-ronde-marqueterie-florale.jpg)
+![Table ronde avec marqueterie florale](/assets/images/cards/table-ronde-marqueterie-florale.jpg?loading=eager)
 
 L'ébénisterie est ce savoir-faire noble du travail du bois dédié à la fabrication de mobilier. À ce titre, je travaille avec l'existant selon votre cahier des charges, ou je vous propose mes services pour la fabrication de petits espaces d'exposition.
 

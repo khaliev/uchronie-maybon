@@ -330,3 +330,35 @@ _(à remplir au fil des tâches)_
   JSON-LD parsé sans erreur, sitemap 12 URLs, aucune variable non résolue.
   Le domaine `uchronie-maybon.fr` reste provisoire (TODO-CLIENT).
 - **Statut** : actée
+
+## ADR-017 — Performance images : priorité de chargement + variantes redimensionnées (correctif pré-T11)
+
+**Date** : 2026-08-22
+- **Contexte** : sur accueil, rendez-vous et réalisations, les blocs texte
+  s'affichaient avant les images (retard visible). Toutes les images étaient en
+  `loading="lazy"` (y compris le hero), avec des `width/height` factices
+  (800x600 en dur) et les originaux pleine taille servis partout (jusqu'à
+  4000px / 3,5 Mo ; favicon 3,5 Mo ; logo header 1,5 Mo pour 60px affiché).
+- **Décision** :
+  - Nouveau module natif `scripts/lib/image-size.mjs` (parse JPEG SOF / PNG
+    IHDR, zéro dépendance) : `renderImage` dans `build.mjs` émet désormais des
+    `width`/`height` réels lus au build depuis le fichier servi.
+  - Syntaxe Markdown étendue : une query string sur le chemin surcharge les
+    attributs de chargement (`?loading=eager&fetchpriority=high`). Défaut :
+    `lazy` + `decoding="async"`.
+  - Nouveau script `scripts/optimize-images.mjs` (npm run optimize-images,
+    via `sips`, natif macOS, sort sans casser si absent) : génère des variantes
+    max 800px dans `src/assets/images/cards/` (+1200px hero accueil, +120px
+    logo header, +240px favicon). Originaux conservés dans `originals/`
+    (référence + Open Graph/JSON-LD). Poids total images : ~29 Mo → ~6,3 Mo.
+  - Politique eager/lazy : hero accueil = eager + fetchpriority=high ;
+    image RDV et images en tête des pages métier = eager ; 4 premières cartes
+    de la galerie réalisations = eager ; reste = lazy.
+- **Alternatives rejetées** : dépendance sharp/lqip (interdite par contrainte
+  zéro dépendance) ; srcset/sizes (gains marginaux sans images multi-densités,
+  reporté) ; lazy partout y compris hero (cause du retard constaté).
+- **Conséquences** : build OK, validate OK, check-links OK ; galerie filtrable
+  intacte (JS sur data-category, non touché) ; OG/Twitter/JSON-LD pointent
+  toujours vers originals/ (voulu). Le script variantes est idempotent mais à
+  relancer si de nouvelles images sont ajoutées dans originals/.
+- **Statut** : actée
